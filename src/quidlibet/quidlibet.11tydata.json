@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["quidlibet"],
+  "piece": "Quidlibet",
+  "pieceSlug": "quidlibet",
+  "pieceRoot": "/quidlibet/",
+  "pieceSub": "An app that invents books — synopsis, author bio, faux reviews, genre and author archives — and how it was built",
+  "pieceAccent": "#6D4FA3",
+  "pieceAccentSoft": "#A58FD0"
+}

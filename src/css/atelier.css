@@ -1,0 +1,424 @@
+/* Atelier — "ribbon & graph paper". IBM Plex throughout; graph-paper blue. */
+
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-ext-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+0100-024F, U+0152-0153, U+2C60-2C7F; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-ext-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; unicode-range: U+0100-024F, U+0152-0153, U+2C60-2C7F; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-500-normal.woff2) format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-600-normal.woff2) format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Serif"; src: url(/fonts/ibm-plex-serif-latin-600-italic.woff2) format("woff2"); font-weight: 600; font-style: italic; font-display: swap; }
+@font-face { font-family: "Plex Sans"; src: url(/fonts/ibm-plex-sans-latin-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Sans"; src: url(/fonts/ibm-plex-sans-latin-500-normal.woff2) format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Sans"; src: url(/fonts/ibm-plex-sans-latin-600-normal.woff2) format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url(/fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url(/fonts/ibm-plex-mono-latin-400-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Plex Mono"; src: url(/fonts/ibm-plex-mono-latin-ext-400-normal.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; unicode-range: U+0100-024F, U+0152-0153, U+2C60-2C7F; }
+@font-face { font-family: "Plex Mono"; src: url(/fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+
+:root {
+  --paper: #FBFBF9;
+  --ink: #17191E;
+  --ink-2: #5A5F6B;
+  --accent: #2D5FA6;
+  --accent-soft: #7FA7DC;
+  --hairline: #E3E4E0;
+  --panel: #F2F2EF;
+  --grid: color-mix(in srgb, var(--accent) 12%, transparent);
+  --serif: "Plex Serif", Georgia, serif;
+  --sans: "Plex Sans", system-ui, sans-serif;
+  --mono: "Plex Mono", ui-monospace, monospace;
+  --col: 44rem;
+  --wide: 62rem;
+  --shell: 84rem;
+  --band-pad: max(clamp(1rem, 4vw, 3rem), calc((100% - var(--shell)) / 2));
+}
+:root[data-theme="dark"] {
+  --paper: #14161B;
+  --ink: #D9DBE0;
+  --ink-2: #8B909B;
+  --accent: #7FA7DC;
+  --accent-soft: #2D5FA6;
+  --hairline: #2A2D35;
+  --panel: #1C1F26;
+  --grid: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14161B;
+    --ink: #D9DBE0;
+    --ink-2: #8B909B;
+    --accent: #7FA7DC;
+    --accent-soft: #2D5FA6;
+    --hairline: #2A2D35;
+    --panel: #1C1F26;
+    --grid: color-mix(in srgb, var(--accent) 10%, transparent);
+  }
+}
+
+/* Piece accents: pieces set --piece-a / --piece-a-soft inline on <body>;
+   dark mode swaps them (the soft variant carries contrast on dark paper).
+   --grid is derived on body so it follows whichever accent is in force. */
+body[style*="--piece-a"] { --accent: var(--piece-a); --accent-soft: var(--piece-a-soft); }
+:root[data-theme="dark"] body[style*="--piece-a"] { --accent: var(--piece-a-soft); --accent-soft: var(--piece-a); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body[style*="--piece-a"] { --accent: var(--piece-a-soft); --accent-soft: var(--piece-a); }
+}
+body { --grid: color-mix(in srgb, var(--accent) 11%, transparent); }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.68;
+}
+
+.mono { font-family: var(--mono); }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ── masthead: atelier is the frame, the piece is the place ───────────── */
+.masthead {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 2rem;
+  padding: 1.1rem calc(var(--band-pad) + 2.8rem) 1.1rem var(--band-pad);
+  border-bottom: 1px solid var(--hairline);
+  position: sticky; top: 0; z-index: 40;
+  background: var(--paper);
+}
+#theme-toggle {
+  position: absolute; top: 0.95rem; right: var(--band-pad);
+  font-family: var(--mono); font-size: 1.05rem; line-height: 1;
+  background: none; color: var(--ink-2);
+  border: 1px solid var(--hairline); border-radius: 50%;
+  width: 2rem; height: 2rem; cursor: pointer;
+}
+#theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.crumbs { margin: 0; display: flex; align-items: baseline; gap: 0.6rem; }
+.wordmark {
+  font-family: var(--mono); font-weight: 500; font-size: 1.05rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.wm-dot { color: var(--accent); }
+.crumb-sep { font-family: var(--mono); color: var(--ink-2); opacity: 0.55; }
+.crumb-piece {
+  font-family: var(--sans); font-size: 0.92rem; font-weight: 600;
+  color: var(--accent); text-decoration: none;
+}
+.crumb-piece:hover { text-decoration: underline; }
+.topnav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.1rem; font-family: var(--sans); font-size: 0.82rem; }
+.topnav a { color: var(--ink-2); text-decoration: none; padding: 0.15rem 0 0.4rem; }
+.topnav a:hover { color: var(--accent); }
+.topnav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--accent); }
+.topnav .nn, .navdrawer .nn { font-family: var(--mono); color: var(--accent); margin-right: 0.35em; font-size: 0.78rem; }
+
+/* below the drawer breakpoint the section nav collapses into a disclosure —
+   native <details>, so it works without JS */
+.navdrawer { display: none; }
+@media (max-width: 56rem) {
+  .topnav { display: none; }
+  .navdrawer { display: block; position: static; }
+  .navdrawer summary {
+    list-style: none; cursor: pointer;
+    position: absolute; top: 0.95rem; right: calc(var(--band-pad) + 2.7rem);
+    font-family: var(--mono); font-size: 1.1rem; line-height: 1.9rem;
+    text-align: center; color: var(--ink-2);
+    border: 1px solid var(--hairline); border-radius: 50%;
+    width: 2rem; height: 2rem;
+  }
+  .navdrawer summary::-webkit-details-marker { display: none; }
+  .navdrawer[open] summary { color: var(--accent); border-color: var(--accent); }
+  .navdrawer nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: var(--paper); border-bottom: 1px solid var(--hairline);
+    padding: 0.6rem var(--band-pad) 1rem;
+    display: grid; gap: 0.1rem;
+    font-family: var(--sans); font-size: 0.95rem;
+  }
+  .navdrawer nav a {
+    color: var(--ink-2); text-decoration: none; padding: 0.45rem 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .navdrawer nav a:last-child { border-bottom: none; }
+  .navdrawer nav a[aria-current="page"] { color: var(--accent); font-weight: 600; }
+  .masthead { padding-right: calc(var(--band-pad) + 5.6rem); }
+}
+
+/* ── essay header: big, on graph paper ────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+.essay-head {
+  padding: clamp(2.5rem, 7vw, 5rem) var(--band-pad) clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--hairline);
+}
+.eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent);
+}
+.essay-head h1 {
+  margin: 0; max-width: 20ch;
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  line-height: 1.06; letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* ── prose + floating toc ─────────────────────────────────────────────── */
+.prose {
+  max-width: var(--col);
+  margin: 0 auto;
+  padding: 3rem clamp(1rem, 4vw, 2rem) 2rem;
+}
+.toc { display: none; }
+.prose h2 { scroll-margin-top: 5.5rem; }
+@media (min-width: 78rem) {
+  /* prose truly centred; the toc floats in the right gutter */
+  .essay-body {
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) var(--col) minmax(2rem, 1fr);
+  }
+  .essay-body .prose { grid-column: 2; max-width: none; margin: 0; padding-inline: 0; }
+  .toc[hidden] { display: none; }
+  .toc {
+    display: block; grid-column: 3; justify-self: start;
+    width: min(16rem, calc(100% - 2.5rem)); margin-left: 2.5rem;
+    position: sticky; top: 5.5rem; align-self: start;
+    margin-top: 3.4rem; max-height: calc(100vh - 7rem); overflow-y: auto;
+    font-family: var(--sans); font-size: 0.82rem; line-height: 1.4;
+  }
+  .toc-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 0.6rem; }
+  .toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--hairline); }
+  .toc li { margin: 0; }
+  .toc a {
+    display: block; padding: 0.28rem 0 0.28rem 0.9rem;
+    color: var(--ink-2); text-decoration: none;
+    border-left: 2px solid transparent; margin-left: -1.5px;
+  }
+  .toc a:hover { color: var(--ink); }
+  .toc a.active { color: var(--accent); border-left-color: var(--accent); font-weight: 500; }
+
+  /* with the toc occupying the right gutter, figures break out to the left
+     only — asymmetry keeps the slot distinct without touching the toc */
+  .essay-body .prose .figure-slot,
+  .essay-body .prose figure { margin-inline: -6rem 0; }
+}
+.prose h1 { display: none; } /* the md files repeat the title; the header owns it */
+.prose h2 {
+  font-weight: 600; font-size: 1.7rem; line-height: 1.2;
+  margin: 3.2rem 0 1rem; letter-spacing: -0.01em;
+}
+.prose h2::before {
+  content: ""; display: block; width: 2.2rem; height: 4px;
+  background: var(--accent); margin-bottom: 0.9rem;
+}
+.prose h1 + p em:first-child { color: var(--ink-2); }
+.prose p { margin: 0 0 1.25rem; }
+.prose strong { font-weight: 600; }
+.prose ul, .prose ol { padding-left: 1.4rem; }
+.prose li { margin-bottom: 0.6rem; }
+
+.prose code {
+  font-family: var(--mono); font-size: 0.86em;
+  background: var(--panel); padding: 0.1em 0.35em; border-radius: 4px;
+}
+.prose pre {
+  background: var(--panel); border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.2rem; overflow-x: auto;
+  font-size: 0.83rem; line-height: 1.55;
+}
+.prose pre code { background: none; padding: 0; font-size: inherit; }
+
+.prose table {
+  width: 100%; border-collapse: collapse;
+  font-family: var(--sans); font-size: 0.88rem; line-height: 1.45;
+  margin: 1.5rem 0;
+}
+.prose th { text-align: left; font-weight: 600; border-bottom: 2px solid var(--ink); padding: 0.4rem 0.7rem 0.4rem 0; }
+.prose td { border-bottom: 1px solid var(--hairline); padding: 0.45rem 0.7rem 0.45rem 0; vertical-align: top; }
+
+.prose blockquote {
+  margin: 1.8rem 0; padding: 0.2rem 0 0.2rem 1.3rem;
+  border-left: 3px solid var(--accent);
+  font-size: 1.02rem; color: var(--ink-2);
+}
+
+/* draft figure placeholders — visibly slots, on graph paper, breaking out */
+.prose .figure-slot {
+  border: 1.5px dashed var(--accent-soft); border-radius: 10px;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  padding: 1.2rem 1.5rem; margin: 2.4rem calc((var(--col) - var(--wide)) / 2);
+  font-family: var(--mono); font-size: 0.8rem; line-height: 1.6;
+  color: var(--ink-2);
+}
+.prose .figure-slot strong { color: var(--accent); font-weight: 500; }
+.prose .figure-slot p { margin: 0 0 0.5rem; }
+@media (max-width: 66rem) { .prose .figure-slot { margin-inline: 0; } }
+
+/* real figures, once assets exist: full-bleed-ish breakout + lightbox */
+.prose figure { margin: 2.4rem calc((var(--col) - var(--wide)) / 2); }
+@media (max-width: 66rem) { .prose figure { margin-inline: 0; } }
+.prose figure img { width: 100%; height: auto; border-radius: 8px; cursor: zoom-in; }
+.prose figcaption {
+  font-family: var(--sans); font-size: 0.85rem; color: var(--ink-2);
+  margin-top: 0.6rem; max-width: 60ch;
+}
+.prose figcaption .fig-n { font-family: var(--mono); color: var(--accent); margin-right: 0.5em; }
+.prose .provenance { display: block; font-size: 0.78rem; margin-top: 0.2rem; color: var(--ink-2); opacity: 0.85; }
+.prose .provenance a { color: inherit; }
+
+/* multi-image figures: sit the images in a row that shares the width evenly;
+   they stack on a narrow screen where a row would make each too small */
+.prose .fig-row { display: flex; gap: 0.9rem; align-items: flex-start; }
+.prose .fig-row img { flex: 1 1 0; min-width: 0; margin: 0; }
+@media (max-width: 40rem) { .prose .fig-row { flex-direction: column; } }
+
+/* inlined SVG diagrams (see the inline-svg transform): full width, and
+   recolored from the Figma palette to the site's theme tokens so they track
+   light/dark — including the manual toggle, which a linked SVG can't see */
+.prose .svg-adapt { display: block; width: 100%; height: auto; }
+.prose .svg-adapt [fill="black"] { fill: var(--ink); }
+.prose .svg-adapt [stroke="black"] { stroke: var(--ink); }
+.prose .svg-adapt [fill="white"] { fill: var(--paper); }
+.prose .svg-adapt [fill="#2D5FA6" i] { fill: var(--accent); }
+.prose .svg-adapt [stroke="#2D5FA6" i] { stroke: var(--accent); }
+
+/* paired light/dark preview images: show whichever matches the active theme,
+   following the same cascade as the theme tokens — manual toggle first, OS
+   preference only when no explicit choice has been made */
+.prose .theme-dark { display: none; }
+:root[data-theme="dark"] .prose .theme-light { display: none; }
+:root[data-theme="dark"] .prose .theme-dark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .prose .theme-light { display: none; }
+  :root:not([data-theme="light"]) .prose .theme-dark { display: block; }
+}
+
+/* ── pager ────────────────────────────────────────────────────────────── */
+.pager {
+  max-width: var(--col); margin: 2rem auto 0;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.pg {
+  display: block; text-decoration: none; color: var(--ink);
+  border: 1px solid var(--hairline); border-radius: 10px;
+  padding: 0.9rem 1.1rem; transition: border-color 120ms;
+}
+.pg:hover { border-color: var(--accent); }
+.pg .mono { display: block; font-size: 0.78rem; color: var(--accent); margin-bottom: 0.25rem; }
+.pg-t { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; }
+.pg-next { text-align: right; }
+.pg-empty { border: none; }
+
+/* ── cite block + footer ──────────────────────────────────────────────── */
+.cite {
+  max-width: var(--col); margin: 2.5rem auto 0;
+  padding: 1.1rem clamp(1rem, 4vw, 2rem);
+  border-top: 1px solid var(--hairline);
+  font-size: 0.95rem; color: var(--ink-2);
+}
+.cite-label { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin: 0 0 0.4rem; }
+.cite p { margin: 0 0 0.3rem; }
+
+.colophon {
+  margin-top: 3rem; padding: 1.6rem var(--band-pad) 2.5rem;
+  border-top: 1px solid var(--hairline);
+  font-family: var(--sans); font-size: 0.85rem; color: var(--ink-2);
+}
+.colophon .mono { font-size: 0.78rem; color: var(--accent); margin: 0 0 0.4rem; }
+.colophon p { margin: 0 0 0.4rem; max-width: 70ch; }
+
+/* ── lightbox ─────────────────────────────────────────────────────────── */
+dialog#lightbox {
+  border: none; border-radius: 10px; padding: 0;
+  max-width: min(94vw, 1400px); max-height: 92vh;
+  background: var(--paper);
+}
+dialog#lightbox::backdrop { background: rgba(10, 12, 16, 0.82); }
+dialog#lightbox img { display: block; max-width: 100%; max-height: 92vh; }
+#lb-close {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  font-family: var(--mono); font-size: 1.2rem; line-height: 1;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--hairline); border-radius: 50%;
+  width: 2.2rem; height: 2.2rem; cursor: pointer;
+}
+.lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  font-family: var(--mono); font-size: 1.6rem; line-height: 1;
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--hairline); border-radius: 50%;
+  width: 2.6rem; height: 2.6rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 0 0.15em;
+}
+.lb-nav:hover { border-color: var(--accent); color: var(--accent); }
+.lb-prev { left: 0.5rem; }
+.lb-next { right: 0.5rem; }
+.lb-count {
+  position: absolute; bottom: 0.5rem; left: 50%; transform: translateX(-50%);
+  margin: 0; padding: 0.15rem 0.6rem; border-radius: 999px;
+  background: var(--paper); color: var(--ink-2);
+  font-size: 0.75rem; border: 1px solid var(--hairline);
+}
+
+/* ── home ─────────────────────────────────────────────────────────────── */
+.home-hero { padding: clamp(3rem, 10vw, 7rem) var(--band-pad); border-bottom: 1px solid var(--hairline); }
+.home-hero h1 { margin: 0 0 1rem; font-weight: 600; font-size: clamp(2.4rem, 7vw, 5rem); line-height: 1.02; letter-spacing: -0.02em; max-width: 16ch; }
+.home-hero p { max-width: 46ch; font-size: 1.15rem; color: var(--ink-2); margin: 0; }
+
+/* the pieces as a ruled catalogue index — no boxes, hairlines only;
+   two entries per row once there's room */
+.piece-index {
+  list-style: none; margin: 0; padding: 2rem var(--band-pad) 3rem;
+  display: grid; column-gap: 4.5rem;
+}
+@media (min-width: 64rem) { .piece-index { grid-template-columns: 1fr 1fr; } }
+.piece-index li { border-top: 1px solid var(--hairline); }
+.piece-index a {
+  display: grid; grid-template-columns: 3.4rem minmax(0, 1fr);
+  align-items: baseline;
+  padding: 1.6rem 0.2rem 1.9rem;
+  text-decoration: none; color: var(--ink);
+}
+.piece-index .ix-n { font-size: 0.85rem; color: var(--pc, var(--accent)); }
+.piece-index .ix-title {
+  display: block; font-family: var(--serif); font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem); line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.piece-index .ix-dek {
+  display: block; margin-top: 0.45rem; max-width: 58ch;
+  font-family: var(--sans); font-size: 0.9rem; line-height: 1.5;
+  color: var(--ink-2);
+}
+.piece-index .ix-meta {
+  grid-column: 2; margin-top: 0.8rem;
+  font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink-2);
+}
+.piece-index a:hover .ix-title { color: var(--pc, var(--accent)); }
+.piece-index a:hover .ix-n { font-weight: 500; }
+
+/* ── print ────────────────────────────────────────────────────────────── */
+@media print {
+  .masthead, .topnav, .pager, #lightbox { display: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .essay-head, .grid-bg { background-image: none; border: none; padding: 0 0 1rem; }
+  .prose { max-width: none; padding: 0; }
+  a { color: #000; text-decoration: none; }
+  .cite, .colophon { border-top: 1px solid #000; }
+}

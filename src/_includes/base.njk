@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · {{ site.name }}</title>
+  <meta name="description" content="{{ pieceSub or 'Making-of notes for digital projects.' }}">
+  <script>const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t;</script>
+  <link rel="stylesheet" href="/css/atelier.css">
+  <script defer src="/js/atelier.js"></script>
+</head>
+<body{% if pieceSlug %} data-piece="{{ pieceSlug }}"{% endif %}{% if pieceAccent %} style="--piece-a: {{ pieceAccent }}; --piece-a-soft: {{ pieceAccentSoft or pieceAccent }};"{% endif %}>
+  <header class="masthead">
+    <p class="crumbs">
+      <a class="wordmark" href="/">atelier<span class="wm-dot">.</span></a>
+      {%- if piece %}<span class="crumb-sep" aria-hidden="true">/</span>
+      <a class="crumb-piece" href="{{ pieceRoot }}">{{ piece }}</a>{% endif %}
+    </p>
+    {% macro sectionLinks(pages, current) %}
+      {%- for p in pages %}
+      <a href="{{ p.url }}" {% if p.url == current %}aria-current="page"{% endif %}>
+        {%- if p.data.nn !== "" %}<span class="nn">{{ p.data.nn or p.data.section }}</span>{% endif -%}
+        {{ p.data.navLabel or p.data.title }}
+      </a>
+      {%- endfor %}
+    {% endmacro %}
+    {% if piece %}{% set piecePages = collections[pieceSlug] | bySection %}
+    {% if piecePages.length > 1 %}
+    <nav class="topnav" aria-label="Sections of {{ piece }}">
+      {{ sectionLinks(piecePages, page.url) }}
+    </nav>
+    <details class="navdrawer">
+      <summary aria-label="Sections of {{ piece }}"><span aria-hidden="true">≡</span></summary>
+      <nav aria-label="Sections of {{ piece }}">
+        {{ sectionLinks(piecePages, page.url) }}
+      </nav>
+    </details>
+    {% endif %}{% endif %}
+    <button id="theme-toggle" aria-label="Switch between light and dark mode" title="Light / dark">◐</button>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="colophon">
+    <p class="mono">{{ site.name }} · built {{ site.built | isoDate }} · {{ site.version }}</p>
+    <p>Prose licensed <a href="https://creativecommons.org/licenses/by/4.0/">{{ site.licenceProse }}</a>,
+       code <a href="https://opensource.org/license/mit">{{ site.licenceCode }}</a>.</p>
+  </footer>
+
+  <dialog id="lightbox" aria-label="Enlarged figure">
+    <button class="lb-nav lb-prev" aria-label="Previous image" hidden>‹</button>
+    <img alt="">
+    <button class="lb-nav lb-next" aria-label="Next image" hidden>›</button>
+    <button id="lb-close" aria-label="Close">×</button>
+    <p class="lb-count mono" aria-live="polite" hidden></p>
+  </dialog>
+</body>
+</html>

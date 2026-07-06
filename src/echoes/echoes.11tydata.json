@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["echoes"],
+  "piece": "Echoes",
+  "pieceSlug": "echoes",
+  "pieceRoot": "/echoes/",
+  "pieceSub": "Dispatches from histories that never were — how a daily alternate-history article gets made",
+  "pieceAccent": "#A04A2A",
+  "pieceAccentSoft": "#D08B63"
+}

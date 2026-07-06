@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["digest"],
+  "piece": "Digest",
+  "pieceSlug": "digest",
+  "pieceRoot": "/digest/",
+  "pieceSub": "Daily seasonal AI-assisted recipes with the morning's headlines in their mood — how the recipe machine works",
+  "pieceAccent": "#3F7A3C",
+  "pieceAccentSoft": "#8FBE7F"
+}

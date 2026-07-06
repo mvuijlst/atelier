@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["raimbaut"],
+  "piece": "Not just OCR",
+  "pieceSlug": "raimbaut",
+  "pieceRoot": "/raimbaut/",
+  "pieceSub": "Turning a typescript doctoral thesis into a digital scholarly edition",
+  "pieceAccent": "#2D5FA6",
+  "pieceAccentSoft": "#7FA7DC"
+}

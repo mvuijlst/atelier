@@ -1,0 +1,45 @@
+---
+layout: base.njk
+---
+<article class="essay">
+  <header class="essay-head grid-bg">
+    <p class="eyebrow mono">{{ piece }} · section {{ section }}</p>
+    <h1>{{ heading or title }}</h1>
+  </header>
+
+  <div class="essay-body">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+    <aside class="toc" aria-label="On this page" hidden>
+      <p class="mono toc-label">On this page</p>
+      <ol data-toc></ol>
+    </aside>
+  </div>
+
+  {% set essays = collections[pieceSlug] | bySection %}
+  {% if essays.length > 1 %}
+  {% for p in essays %}{% if p.url == page.url %}
+  <nav class="pager" aria-label="Section navigation">
+    {% if loop.index0 > 0 %}{% set prev = essays[loop.index0 - 1] %}
+    <a class="pg pg-prev" href="{{ prev.url }}">
+      <span class="mono">← {{ prev.data.section }}</span>
+      <span class="pg-t">{{ prev.data.navLabel or prev.data.title }}</span>
+    </a>
+    {% else %}<span class="pg pg-empty"></span>{% endif %}
+    {% if loop.index0 + 1 < essays.length %}{% set next = essays[loop.index0 + 1] %}
+    <a class="pg pg-next" href="{{ next.url }}">
+      <span class="mono">{{ next.data.section }} →</span>
+      <span class="pg-t">{{ next.data.navLabel or next.data.title }}</span>
+    </a>
+    {% else %}<span class="pg pg-empty"></span>{% endif %}
+  </nav>
+  {% endif %}{% endfor %}
+  {% endif %}
+
+  <aside class="cite">
+    <p class="mono cite-label">How to cite this page</p>
+    <p>Vuijlsteke, Michel, “{{ title }}”, <em>{{ site.name }}</em>,
+       {{ site.built | isoDate }}, {{ site.url }}{{ page.url }}.</p>
+  </aside>
+</article>
