@@ -6,6 +6,10 @@
   <title>{{ title }} · {{ site.name }}</title>
   <meta name="description" content="{{ pieceSub or 'Making-of notes for digital projects.' }}">
   <script>const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t;</script>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="/css/atelier.css">
   <script defer src="/js/atelier.js"></script>
 </head>
@@ -46,7 +50,9 @@
   <footer class="colophon">
     <p class="mono">{{ site.name }} · built {{ site.built | isoDate }} · {{ site.version }}</p>
     <p>Prose licensed <a href="https://creativecommons.org/licenses/by/4.0/">{{ site.licenceProse }}</a>,
-       code <a href="https://opensource.org/license/mit">{{ site.licenceCode }}</a>.</p>
+       code <a href="https://opensource.org/license/mit">{{ site.licenceCode }}</a>.
+       <span class="crumb-sep" aria-hidden="true">·</span>
+       <a href="/colophon/">Who did what</a></p>
   </footer>
 
   <dialog id="lightbox" aria-label="Enlarged figure">

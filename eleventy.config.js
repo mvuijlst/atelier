@@ -10,6 +10,12 @@ export default function (eleventyConfig) {
     "src/echoes/images": "echoes/images",
     "src/digest/images": "digest/images",
     "src/quidlibet/images": "quidlibet/images",
+    "src/favicon.svg": "favicon.svg",
+    "src/favicon.ico": "favicon.ico",
+    "src/apple-touch-icon.png": "apple-touch-icon.png",
+    "src/icon-192.png": "icon-192.png",
+    "src/icon-512.png": "icon-512.png",
+    "src/site.webmanifest": "site.webmanifest",
   });
 
   // SVG figures are inlined at build time so they inherit the page's CSS
@@ -78,7 +84,13 @@ export default function (eleventyConfig) {
     [...(arr || [])].sort((a, b) => (a.data.section ?? 99) - (b.data.section ?? 99))
   );
 
-  eleventyConfig.addFilter("isoDate", (d) => new Date(d).toISOString().slice(0, 10));
+  // Local YYYY-MM-DD, not UTC: an early-morning build must not report
+  // "yesterday" in the footer because toISOString() rolled the date back.
+  eleventyConfig.addFilter("isoDate", (d) => {
+    const dt = new Date(d);
+    const p = (n) => String(n).padStart(2, "0");
+    return `${dt.getFullYear()}-${p(dt.getMonth() + 1)}-${p(dt.getDate())}`;
+  });
 
   return {
     dir: { input: "src", includes: "_includes", output: "_site" },

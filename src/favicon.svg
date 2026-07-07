@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Atelier">
+  <style>
+    :root { --p:#FBFBF9; --i:#17191E; --a:#2D5FA6; --h:#E3E4E0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --p:#14161B; --i:#D9DBE0; --a:#7FA7DC; --h:#2A2D35; }
+    }
+    .bg   { fill: var(--p); }
+    .edge { fill: none; stroke: var(--h); stroke-width: 1; }
+    .grid { stroke: var(--a); stroke-width: 1; opacity: .14; }
+    .mark { fill: none; stroke: var(--i); stroke-width: 4.6;
+            stroke-linecap: round; stroke-linejoin: round; }
+    .dot  { fill: var(--a); }
+  </style>
+
+  <!-- paper tile -->
+  <rect class="bg" x="1" y="1" width="46" height="46" rx="10"/>
+
+  <!-- faint graph-paper grid, clipped to the tile -->
+  <clipPath id="tile"><rect x="1" y="1" width="46" height="46" rx="10"/></clipPath>
+  <g class="grid" clip-path="url(#tile)">
+    <path d="M8 1V47 M16 1V47 M24 1V47 M32 1V47 M40 1V47"/>
+    <path d="M1 8H47 M1 16H47 M1 24H47 M1 32H47 M1 40H47"/>
+  </g>
+
+  <!-- monogram: A + the signature accent dot, echoing the "atelier." wordmark -->
+  <path class="mark" d="M9.5 37 L20 12 L30.5 37 M13.5 29.5 H26.5"/>
+  <circle class="dot" cx="37.8" cy="34.2" r="3.3"/>
+
+  <rect class="edge" x="1.5" y="1.5" width="45" height="45" rx="9.5"/>
+</svg>

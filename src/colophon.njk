@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: Who did what
+permalink: /colophon/
+pieceSub: An honest account of what on this site was made by a person and what by AI.
+---
+<article class="essay">
+  <header class="essay-head grid-bg">
+    <p class="eyebrow mono">Colophon</p>
+    <h1>Who did what</h1>
+  </header>
+
+  <div class="essay-body">
+    <div class="prose">
+      <p>This site is a collaboration between a person and several AI models, and
+        since honesty about that division is half of what the site is
+        <em>about</em>, it should say plainly how this site itself was made — not
+        just the projects it describes.</p>
+
+      <p><strong>What I did.</strong> I chose the projects and what would be worth
+        saying about each. Every claim of fact, every judgement about what an
+        experiment does and does not prove, and every editorial line — what is
+        honest to say, what would be overclaiming — is mine, and I stand behind
+        it. I read, cut, rewrote, and corrected the prose until it said what I
+        meant; where it still says something, I decided it should. Many of the
+        diagrams and figures are mine — conceived, composed, and made — and the
+        rest I reworked well past the point of adjustment.</p>
+
+      <p><strong>What the AI did.</strong> The first drafts of most of this prose
+        were written by Claude, working inside Claude Code from my notes, my
+        arguments, and a great deal of back-and-forth. The site's machinery — the
+        Eleventy build, the templates, the CSS and the handful of scripts — was
+        largely written by the same model under my direction, and debugged the
+        ordinary way, by running it until it worked. Some figures started from an
+        AI draft; where they did, I say so on the figure itself.</p>
+
+      <p><strong>What that means for trust.</strong> A drafting model is fast and
+        tireless and does not know when it is wrong; the checking, the cutting,
+        and the final responsibility are human, because those are the parts a
+        model cannot supply for itself. So: trust the facts and the judgements as
+        far as you would trust me, and no further. Where a specific project leaned
+        on AI in a way worth documenting, its own pages say so in detail — the
+        <a href="/raimbaut/ai/">Raimbaut edition's account</a> is the fullest
+        example.</p>
+
+      <h2>How this site is built</h2>
+
+      <p>There is not much machinery here, on purpose. The pages are plain HTML
+        generated once, at build time, by <a href="https://www.11ty.dev/">Eleventy</a>
+        from Markdown and Nunjucks templates; there is no framework running in
+        your browser and no server doing anything cleverer than handing over
+        files. The styling is hand-written CSS — a set of custom properties for
+        the light and dark themes and the graph-paper motif — with no CSS
+        framework underneath it.</p>
+
+      <p>What JavaScript there is (about a hundred and thirty lines of it, no
+        libraries) is comfort only: the light/dark toggle, the figure lightbox,
+        the floating table of contents, and left/right paging through a piece.
+        Every page reads correctly with scripts switched off — the section
+        anchors and the diagrams are baked in at build time rather than assembled
+        on the fly. The diagrams themselves are SVG, inlined during the build so
+        they can recolour to match the theme.</p>
+
+      <p>Most of the care here is invisible, and I have made my peace with that.
+        The same arrow keys that page from one section to the next also step
+        through a figure's images once the lightbox is open; the screenshots of a
+        reading view come in two versions and swap quietly when you change the
+        theme, so a light-mode reader never gets handed a dark-mode screenshot.
+        Almost nobody will ever notice either of these, and that really is fine —
+        it is simply what I do. I find a rabbit hole and I follow it all the way
+        down.</p>
+
+      <p>Nothing here watches you. There are no third-party requests, no
+        analytics, and no cookies; the single thing this site stores in your
+        browser is whether you last chose light or dark. The fonts are served
+        from this domain, so even they phone no one. The version and date in the
+        footer are not typed by hand — they are read from the project's git
+        history each time the site is built, which is why this copy reads
+        <code>{{ site.version }}</code>, built <code>{{ site.built | isoDate }}</code>.</p>
+
+      <h2>Typography</h2>
+
+      <p>The type is <a href="https://www.ibm.com/plex/">IBM Plex</a> throughout,
+        which is a long-standing affection of mine rather than a considered
+        shortlist — I have always liked it. It arrives as a family of three that
+        divides the labour cleanly: Plex Serif carries the reading text, Plex Sans
+        does the navigation and the small print, and Plex Mono handles the labels,
+        the figure numbers, code, and anything that wants to look like data. Using
+        one designer's three cuts, rather than three unrelated faces, is what keeps
+        the pages feeling of a piece.</p>
+
+      <p>There is a quieter reason it suits this particular project. The first
+        edition described here began life as a 1981 doctoral typescript, hammered
+        out on an IBM Selectric; Plex Mono descends from exactly that lineage of
+        IBM machine lettering, so the monospaced notes and provenance lines carry
+        a faint typewriter accent that is entirely appropriate. The fonts are
+        self-hosted as subset <code>woff2</code> files (Latin and Latin-Extended,
+        so the Occitan and French set correctly) and loaded with
+        <code>font-display: swap</code>, which is the whole of the performance
+        story.</p>
+
+      <p>And one last thing about the marks on the page, since the internet has
+        lately decided that this particular one gives a machine away: yes, I
+        really do use em dashes this much. I have been doing it for more than
+        forty years — long before anything else involved in this site could
+        type a word — and I am not about to stop now to avoid the suspicion.</p>
+    </div>
+  </div>
+</article>
