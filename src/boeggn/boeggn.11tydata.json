@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["boeggn"],
+  "piece": "Your website is almost here!",
+  "pieceSlug": "boeggn",
+  "pieceRoot": "/boeggn/",
+  "pieceSub": "Ditching WordPress during a two-hour meeting — a twenty-four-year-old booklog's forced march to Hugo",
+  "pieceAccent": "#7A5730",
+  "pieceAccentSoft": "#C9A176"
+}

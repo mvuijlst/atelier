@@ -1,7 +1,7 @@
 {
   "layout": "essay.njk",
   "tags": ["raimbaut"],
-  "piece": "Not just OCR",
+  "piece": "Raimbaut d'Orange",
   "pieceSlug": "raimbaut",
   "pieceRoot": "/raimbaut/",
   "pieceSub": "Turning a typescript doctoral thesis into a digital scholarly edition",

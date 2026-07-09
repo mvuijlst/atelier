@@ -1,0 +1,81 @@
+<svg width="742" height="430" viewBox="0 0 742 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="742" height="430" fill="white"/>
+<!-- column headings -->
+<g fill="black" font-family="'Plex Sans', system-ui, sans-serif" font-size="11" font-weight="600">
+<text x="30" y="28">WordPress (wp_9v7ezm_*)</text>
+<text x="502" y="28">Hugo</text>
+</g>
+<!-- left: WP tables -->
+<g stroke="black" stroke-opacity="0.6">
+<rect x="30" y="42" width="210" height="48"/>
+<rect x="30" y="104" width="210" height="48"/>
+<rect x="30" y="166" width="210" height="48"/>
+<rect x="30" y="228" width="210" height="48"/>
+<rect x="30" y="290" width="210" height="48"/>
+</g>
+<g fill="black" font-family="'Plex Mono', ui-monospace, monospace" font-size="10.5">
+<text x="42" y="61">posts</text>
+<text x="42" y="123">postmeta</text>
+<text x="42" y="185">terms + term_taxonomy</text>
+<text x="42" y="247">comments</text>
+<text x="42" y="309">uploads/ (files)</text>
+</g>
+<g fill="black" opacity="0.65" font-family="'Plex Sans', system-ui, sans-serif" font-size="9.5">
+<text x="42" y="77">889 books · titles, dates, review text</text>
+<text x="42" y="139">quotering 0–10 · publicatie · cover id</text>
+<text x="42" y="201">21 categories · 510 tags · 955 authors</text>
+<text x="42" y="263">567 approved</text>
+<text x="42" y="325">1,367 images</text>
+</g>
+<!-- right: Hugo -->
+<g stroke="black" stroke-opacity="0.6">
+<rect x="502" y="42" width="210" height="110"/>
+<rect x="502" y="166" width="210" height="48"/>
+<rect x="502" y="228" width="210" height="48"/>
+<rect x="502" y="290" width="210" height="48"/>
+</g>
+<g fill="black" font-family="'Plex Mono', ui-monospace, monospace" font-size="10.5">
+<text x="514" y="61">content/posts/*.md</text>
+<text x="514" y="185">content/authors/…</text>
+<text x="514" y="247">(parked, static)</text>
+<text x="514" y="309">media/</text>
+</g>
+<g fill="black" opacity="0.65" font-family="'Plex Sans', system-ui, sans-serif" font-size="9.5">
+<text x="514" y="79">one Markdown file per book:</text>
+<text x="514" y="93">title · date · rating · cover</text>
+<text x="514" y="107">categories · tags · authors</text>
+<text x="514" y="121">review text as the body</text>
+<text x="514" y="137">(publicatie: unpicked later)</text>
+<text x="514" y="201">display name + wpName · /aut/</text>
+<text x="514" y="263">567 comments, awaiting render</text>
+<text x="514" y="325">originals, same URLs</text>
+</g>
+<!-- arrows -->
+<g stroke="#2D5FA6" stroke-width="1.5">
+<path d="M240 66H494"/>
+<path d="M240 128 L494 97"/>
+<path d="M240 190H494"/>
+<path d="M240 252H494"/>
+<path d="M240 314H494"/>
+</g>
+<g fill="#2D5FA6">
+<path d="M494 66 l-9 -4.5 v9 z"/>
+<path d="M494 97 l-9.3 -3.4 l1.1 8.9 z"/>
+<path d="M494 190 l-9 -4.5 v9 z"/>
+<path d="M494 252 l-9 -4.5 v9 z"/>
+<path d="M494 314 l-9 -4.5 v9 z"/>
+</g>
+<!-- spoil heap -->
+<g stroke="black" stroke-opacity="0.5" stroke-dasharray="6 5">
+<rect x="30" y="366" width="682" height="50"/>
+</g>
+<g fill="black" font-family="'Plex Sans', system-ui, sans-serif" font-size="9.5">
+<text x="42" y="385" font-weight="600">spoil heap (dropped)</text>
+<text x="42" y="401" opacity="0.65">2,764 revisions · 1,215 spam comments · plugin postmeta strata (Jetpack, YARPP, Publicize, Spectra) · 454 Amazon affiliate links · resized image variants</text>
+</g>
+<!-- drop lines into the heap -->
+<g stroke="black" stroke-opacity="0.35" stroke-dasharray="3 4">
+<path d="M135 276V366"/>
+<path d="M135 338V366"/>
+</g>
+</svg>

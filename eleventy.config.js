@@ -7,6 +7,7 @@ export default function (eleventyConfig) {
     "src/js": "js",
     "src/images": "images",
     "src/raimbaut/images": "raimbaut/images",
+    "src/boeggn/images": "boeggn/images",
     "src/echoes/images": "echoes/images",
     "src/digest/images": "digest/images",
     "src/quidlibet/images": "quidlibet/images",

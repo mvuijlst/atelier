@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["boeggn-journey"],
+  "piece": "More than a migration",
+  "pieceSlug": "boeggn-journey",
+  "pieceRoot": "/boeggn-journey/",
+  "pieceSub": "How a beloved 24-year-old booklog turned its darkest hour into its finest chapter",
+  "pieceAccent": "#0F8B8D",
+  "pieceAccentSoft": "#79C6C2"
+}

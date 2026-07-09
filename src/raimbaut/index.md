@@ -1,12 +1,12 @@
 ---
-title: "Not Just OCR: Turning a Typescript Doctoral Thesis into a Digital Scholarly Edition"
-heading: "Not just OCR"
+title: "Raimbaut d'Orange: Turning a Typescript Doctoral Thesis into a Digital Scholarly Edition"
+heading: "Raimbaut d'Orange"
 navLabel: "Context"
 section: 1
 status: draft
 ---
 
-# Not Just OCR
+# Raimbaut d'Orange
 
 *Turning a typescript doctoral thesis into a digital scholarly edition*
 
