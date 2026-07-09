@@ -422,3 +422,60 @@ dialog#lightbox img { display: block; max-width: 100%; max-height: 92vh; }
   a { color: #000; text-decoration: none; }
   .cite, .colophon { border-top: 1px solid #000; }
 }
+
+/* ---- Piece 03 "Built in a day": piece-local dress code. This piece alone
+   sets its running text — headings included — in Plex Mono; the author-note
+   box before the introduction opts back out to the site serif, and the
+   brief-modal dialog shows the original prompt verbatim. All scoped to
+   body[data-piece] so no other piece is affected. ---- */
+body[data-piece="boeggn-app"] .essay-head h1,
+body[data-piece="boeggn-app"] .prose,
+body[data-piece="boeggn-app"] .prose h2,
+body[data-piece="boeggn-app"] .prose table,
+body[data-piece="boeggn-app"] .prose figcaption { font-family: var(--mono); }
+body[data-piece="boeggn-app"] .prose { font-size: 1.0625rem; }
+/* Plex Mono ships no 600 weight here; 500 keeps headings crisp instead of
+   faux-bolded. */
+body[data-piece="boeggn-app"] .essay-head h1,
+body[data-piece="boeggn-app"] .prose h2 { font-weight: 500; }
+
+body[data-piece="boeggn-app"] .author-note {
+  font-family: var(--serif); font-size: 1.125rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline); border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 1.15rem 1.4rem; margin: 2.4rem 0;
+}
+body[data-piece="boeggn-app"] .author-note p:last-child { margin-bottom: 0; }
+
+dialog#brief-modal {
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--hairline); border-radius: 10px;
+  width: min(44rem, 92vw); max-height: 82vh;
+  padding: 1.3rem 1.5rem;
+  display: flex; flex-direction: column;
+}
+dialog#brief-modal::backdrop { background: rgba(10, 12, 16, 0.7); }
+#brief-modal .bm-head {
+  flex: none;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; margin: 0 0 0.9rem;
+}
+#brief-modal .bm-label {
+  font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--accent); margin: 0;
+}
+#brief-modal .bm-close {
+  font-family: var(--mono); font-size: 0.9rem; line-height: 1.4;
+  background: none; border: 1px solid var(--hairline); border-radius: 6px;
+  color: var(--ink-2); padding: 0.1rem 0.55rem; cursor: pointer;
+}
+#brief-modal .bm-close:hover { color: var(--ink); border-color: var(--ink-2); }
+#brief-modal .bm-body {
+  overflow-y: auto;
+  font-family: var(--sans); font-size: 0.9rem; line-height: 1.55;
+}
+#brief-modal .bm-body p { margin: 0 0 0.7rem; }
+#brief-modal .bm-body ul { margin: 0.3rem 0 0.7rem; padding-left: 1.3rem; }
+#brief-modal .bm-body > ul > li { margin-bottom: 0.3rem; }
+#brief-modal .bm-body li { margin-bottom: 0.15rem; }

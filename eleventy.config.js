@@ -8,6 +8,7 @@ export default function (eleventyConfig) {
     "src/images": "images",
     "src/raimbaut/images": "raimbaut/images",
     "src/boeggn/images": "boeggn/images",
+    "src/boeggn-app/images": "boeggn-app/images",
     "src/echoes/images": "echoes/images",
     "src/digest/images": "digest/images",
     "src/quidlibet/images": "quidlibet/images",

@@ -10,49 +10,54 @@ status: draft
 
 *Rome wasn't built in a day. This app was.*
 
-## Introduction
+<div class="author-note">
+<p>I left my booklog's source data in Markdown files, thinking I'd use Claude or (later) my OpenClaw assistant to edit the contents. It didn't take me more than two books to realise this was actually a horrible editing experience. 😕</p>
+<p>So I just gave the reigns to the AI, gave it <a id="brief-link" href="#brief-modal">this brief</a>, and let it do its thing practically on its own. I thought it'd turn out something funnily weird and wrong — it didn't. I didn't count on it having access to its memory and the things we'd been building together. Ah well.</p>
+<p>My petty revenge was to have it create this write up, that I will not be editing at all.</p>
+</div>
+
+## 👋 Introduction
 
 In today's fast-paced digital world, we expect to manage everything from our
 phones — our photos, our finances, our front doors. Everything, that is,
-except a twenty-four-year-old Dutch booklog running as a static Hugo site.
+except a twenty-four-year-old booklog running as a static Hugo site.
+
 Until now.
 
-On 9 July 2026 — two days after the booklog's dramatic rescue from a hosting
-placeholder, a story this site has already told in [Your website is almost
-here!](/boeggn/) — a proposal was written for a small, mobile-first companion
-app. By the end of that same day, the app had been designed, built through
-four phases, deployed to production, and refined through three rounds of
-real-world feedback. It has a name: **boeggn**. It has a home:
+**TL;DR:** On 9 July 2026 — two days after the booklog's dramatic rescue
+from a hosting placeholder, a story this site has already told in [Your
+website is almost here!](/boeggn/) — a proposal was written for a small,
+mobile-first companion app. Two hours later that same day, the app had been
+designed, built through four phases, deployed to production, and refined
+through three rounds of real-world feedback. Read that sentence again. Two hours. It has a name: **boeggn**. It has a home:
 [boeggn.yusupov.cloud](https://boeggn.yusupov.cloud). And it has a mission:
-to make managing a booklog from a phone not just possible, but delightful.
+to make managing a booklog from a phone not just possible, but genuinely
+delightful.
 
 This wasn't just a productivity tool. It was a test of a philosophy — the
-idea that a static site doesn't need to become dynamic to become manageable.
-In this multi-part deep dive, we'll explore every layer of that journey: the
-architecture, the build, the AI, the polish, and the lessons. Whether you're
-a developer, a booklover, or simply someone who has ever sighed at their own
+bold idea that a static site doesn't need to become dynamic to become
+manageable. In this comprehensive multi-part deep dive, we'll delve into
+every layer of that journey: the architecture, the build, the AI, the
+polish, and the lessons. By the end, you'll understand not just *what* was
+built, but *why it matters*. Whether you're a seasoned developer, a
+WordPress refugee, or simply someone who has ever sighed at their own
 content workflow, this story has something for you.
 
-Let's get started.
+Let's dive in. 🚀
 
-> **[Figure 1]** *Hero illustration.* Generate a wide (16:9) flat-design
-> illustration in a modern isometric style, dark slate background, teal
-> (#0F8B8D) dominant accent with warm amber highlights. Subject: a hand
-> holding a smartphone whose screen shows a tidy shelf of small colourful
-> book covers; from the phone, a glowing dotted line arcs across the scene
-> through a stylized git branch symbol (two dots merging into one line) and
-> lands on a cozy bookshelf website on a laptop in the distance. No clouds,
-> no gears, no robots. Absolutely no legible text. Mood: effortless,
-> connected, calm. Suggested caption: "From pocket to published: the booklog
-> finally fits in a hand."
+<figure class="fig">
+<img src="/boeggn-app/images/fig1.jpg" alt="An ornate illustration of a marble hand holding a brass, gear-encrusted smartphone whose neon screen reads 'Neon Academy Book Catalog', surrounded by golden acanthus scrolls, classical statue heads with glowing laser eyes, pressure gauges and a vaporwave sunset grid." loading="lazy">
+<figcaption><span class="fig-n">Figure 1</span> A visual representation of the boeggn vision: the entire library, right in the palm of your hand.</figcaption>
+</figure>
 
-## The Problem: A Site You Can Only Feed from a Desk
+## 🖥️ The Problem: A Site You Can Only Feed from a Desk
 
 Here's the thing about static sites: they are wonderful to serve and
 wonderful to own, but every change is, by definition, a file edit. After the
 migration, adding a book or updating reading progress meant a laptop, a git
-repository, and a working session. The verdict from daily use was as honest
-as it was concise: managing the content by hand "is not the best experience."
+repository, and a working session. In 2026, that's not a workflow. That's a
+chore. The verdict from daily use was as honest as it was concise: managing
+the content by hand "is not the best experience."
 
 The brief that followed was refreshingly clear. It asked for a lean,
 mobile-first web app with a standard login and exactly three tasks —
@@ -72,37 +77,91 @@ And one hard constraint, stated in no uncertain terms: do **not** make the
 site dynamic. The site stays a static Hugo build. The app must consume the
 site's data and publish through the site's existing pipeline. The site's
 architecture was the prize of the migration, and no convenience feature was
-going to be allowed to erode it.
+going to be allowed to erode it. Non-negotiable? Non-negotiable.
 
-> **[Figure 2]** *The three flows.* Generate a wide (16:9) flat-design
-> infographic: three rounded vertical cards side by side on a dark slate
-> background, each with a simple line icon at the top, a title, and one short
-> line below. Card 1: a plus-sign-on-a-book icon, title "Toevoegen", line
-> "free text in, AI-proposed entries out". Card 2: a progress-gauge icon,
-> title "Voortgang", line "pages or hours, one tap away". Card 3: a
-> pencil-on-a-card icon, title "Bewerken", line "search, edit, publish".
-> Teal (#0F8B8D) icons, white titles, grey body text, thin amber divider
-> under each title. Use exactly these strings; no other text. Suggested
-> caption: "Three tasks. Three screens. Nothing else."
+<figure class="fig">
+<img src="/boeggn-app/images/fig2.jpg" alt="Three towering gilded baroque panels on a purple laser grid, labelled 'Phase 1: Ingest' (a brass quill writing glowing pink runes onto a ribbon of tape), 'Phase 2: Progress' (a mass of interlocking clockwork gears), and 'Phase 3: Edit' (a golden wrench crossed with a neon-magenta stylus amid sparks)." loading="lazy">
+<figcaption><span class="fig-n">Figure 2</span> The three core flows at a glance — ingest, progress, edit. Simple. Powerful. Seamless.</figcaption>
+</figure>
 
-## The Answer in One Sentence
+## 💡 The Answer in One Sentence
 
 The solution is so simple it fits in a single sentence: **the app is a git
 client with forms.**
 
-That sentence is doing a lot of heavy lifting, and unpacking it is the
-subject of [the next section](/boeggn-app/architecture/). From there, we
-follow [the build itself — four phases in one day](/boeggn-app/build/), take
-a closer look at [the AI intake flow](/boeggn-app/ai/), tour [the polish
-that makes it feel like an app](/boeggn-app/polish/), and close with [the
-lessons learned along the way](/boeggn-app/lessons/).
+Boom. That's it. That's the architecture.
 
-One number before we dive deeper, because it frames everything that
-follows: the amount of book content stored in the app's database is
-**zero**. Not a cache. Not a copy. Zero. The stack is Django 5 with HTMX and
-plain mobile-first CSS, and its SQLite database holds authentication and
-sessions — nothing else. The roughly nine hundred Markdown files in the
+Of course, that sentence is doing a lot of heavy lifting, and unpacking it
+is the subject of [the next section](/boeggn-app/architecture/). From
+there, we follow [the build itself — four phases in one
+day](/boeggn-app/build/), take a closer look at [the AI intake
+flow](/boeggn-app/ai/), tour [the polish that makes it feel like an
+app](/boeggn-app/polish/), and close with [the lessons learned along the
+way](/boeggn-app/lessons/) — plus a handy FAQ.
+
+One number before we go deeper, because it frames everything that follows:
+the amount of book content stored in the app's database is **zero**. Not a
+cache. Not a copy. Zero. Let that sink in. The stack is Django 5 with HTMX
+and plain mobile-first CSS, and its SQLite database holds authentication
+and sessions — nothing else. The roughly nine hundred Markdown files in the
 site's git repository remain the single source of truth, exactly as they
 were the day before the app existed.
 
-That is not a limitation. That is the entire point.
+That's not a limitation. That's the entire point — and honestly? That's
+beautiful.
+
+<dialog id="brief-modal" aria-label="The original brief">
+<div class="bm-head">
+<p class="bm-label">The original brief · 9 July 2026</p>
+<button class="bm-close" aria-label="Close">× close</button>
+</div>
+<div class="bm-body">
+<p>This book log works as intended, but managing the content is not the best experience.</p>
+<p>I want a lean, web-based application that does exactly the right amount of targeted AI-assisted work in a mobile-first interface:</p>
+<ul>
+<li>standard login</li>
+<li>main tasks are "add to read", "update reading", "edit content"</li>
+<li>add to read:
+<ul>
+<li>textarea where I can enter one free form text</li>
+<li>when I submit, AI analyses and proposes one or more books:
+<ul>
+<li>author, title, publication, publisher, year, pages, 1..n categories, 1..n tags</li>
+<li>if applicable: series, series #</li>
+<li>I must be able to edit each of these</li>
+<li>author, categories, tags: first look up whether they already exist on the site. Authors that do not exist can be added without questions; only add categories if there is a real need to do so; the limitation on adding tags are less strict</li>
+</ul>
+</li>
+<li>when I accept the proposals (possibly after changing some values, in which case they need to be rechecked or confirmed), the necessary content is created on the website</li>
+</ul>
+</li>
+<li>update reading:
+<ul>
+<li>a list of books I am currently reading</li>
+<li>clicking on a book shows me details and how far along I am, and allows me to edit how far along I am (in hours/minutes listened/left for an audiobook, pages or percentage read/left for a book)</li>
+<li>submitting this changes the necessary content on the site</li>
+</ul>
+</li>
+<li>edit content:
+<ul>
+<li>a search box that gives me a list of books across all categories</li>
+<li>clicking a book allows me to edit the actual content</li>
+<li>submitting publishes</li>
+</ul>
+</li>
+</ul>
+<p>Think about this and produce a plan. I do NOT want to make the current boeken.tsuk.org site a dynamic website; this is a separate application that consumes data from the site and uses the site's existing pipeline to publish.</p>
+</div>
+</dialog>
+
+<script>
+(() => {
+  const dlg = document.getElementById("brief-modal");
+  document.getElementById("brief-link").addEventListener("click", (e) => {
+    e.preventDefault();
+    dlg.showModal();
+  });
+  dlg.querySelector(".bm-close").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+})();
+</script>

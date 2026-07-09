@@ -8,18 +8,22 @@ status: draft
 
 # The architecture
 
-## A Git Client with Forms
+## 🔧 A Git Client with Forms
 
 Every great architecture can be summarized in one sentence, and this one has
-already been said: the app is a git client with forms. Let's unpack what
-that actually means — because the elegance is in the details.
+already been said: the app is a git client with forms. Let's break it down —
+because the elegance is in the details, and the details are where this
+design truly shines.
 
-The insight at the core of the design is that the booklog already *had* a
-content API. It just didn't look like one. The site's git repository *is*
-the site's data — one Markdown file per book — and `git push` *is* the
-publish button: the site's existing GitHub Actions pipeline builds the Hugo
-site and rsyncs it to the server on every push. The app doesn't need to
-replace any of that. It needs to *participate* in it.
+The game-changing insight at the core of the design is that the booklog
+already *had* a content API. It just didn't look like one. The site's git
+repository *is* the site's data — one Markdown file per book — and `git
+push` *is* the publish button: the site's existing GitHub Actions pipeline
+builds the Hugo site and rsyncs it to the server on every push. The app
+doesn't need to replace any of that. It needs to *participate* in it.
+
+Think of it as a very polite houseguest: it uses the kitchen, it follows
+the house rules, and it leaves everything exactly as it found it.
 
 So the app keeps a working clone of the site's repository on the VPS, right
 next to itself. For reads, it parses front matter directly from the clone's
@@ -38,22 +42,16 @@ progress update or a fully new book — runs the exact same sequence:
 5. **push** — and the site's pipeline takes it from there.
 
 Nothing is committed if the linter objects. Nothing drifts, because there is
-nothing to drift: no second copy of the content exists anywhere.
+nothing to drift: no second copy of the content exists anywhere. The
+result? A robust, elegant, future-proof foundation that leverages
+infrastructure that already existed.
 
-> **[Figure 3]** *System architecture.* Generate a wide (16:9) architecture
-> diagram in clean flat design: rounded rectangles, dark slate background,
-> teal (#0F8B8D) boxes, thin amber arrows, white sans-serif labels. Left: a
-> phone icon labelled "phone (PWA)" with an HTTPS arrow to a large container
-> labelled "boeggn — Django 5 + HTMX (VPS)". Inside the container, three
-> small boxes: "working clone of the site repo", "check_books.py (the
-> site's own linter)", "SQLite — auth & sessions only". From the container,
-> one arrow labelled "git push" to a box "GitHub", which flows on to a box
-> "Actions: Hugo build + rsync" and finally to a box "boeken.tsuk.org
-> (static)". A separate small box "OpenAI API" connected to the container
-> with a dashed line labelled "add-flow only". Use exactly these labels.
-> Suggested caption: "The app doesn't replace the pipeline. It joins it."
+<figure class="fig">
+<img src="/boeggn-app/images/fig3.jpg" alt="A steampunk architecture fantasy: a brass smartphone piped with pink neon tubes into a Gothic cathedral labelled 'Django app server' with stained-glass windows and twin towers labelled 'GIT', a telescope beaming toward a floating golden castle labelled 'GITHUB' on a lightning-wreathed island, and an all-seeing eye in an orb labelled 'AI API' above it all." loading="lazy">
+<figcaption><span class="fig-n">Figure 3</span> The architecture, visualized: from phone to Django to GitHub — and every layer in between.</figcaption>
+</figure>
 
-## The Stack: Boring by Design
+## 🧱 The Stack: Boring by Design
 
 The technology choices follow directly from the philosophy, and each one is
 worth a brief spotlight:
@@ -68,7 +66,10 @@ worth a brief spotlight:
   it is the load-bearing decision of the whole design: **content never
   lives in a database.** The site stays fully rebuildable from git alone.
 
-It's important to note what was considered and rejected, because good
+Boring? Absolutely. And that's precisely the point. Boring technology is
+technology that works on day one, day one hundred, and day one thousand.
+
+It's also important to note what was considered and rejected, because good
 architecture is as much about the roads not taken. Using GitHub's Contents
 API instead of a clone? Possible — but multi-file commits (a post plus
 author pages plus a series page plus a cover) become awkward, and you lose
@@ -77,38 +78,33 @@ the job, and harder for one person to maintain. Making the site itself
 dynamic? Explicitly out of scope — that was the one line nobody was allowed
 to cross.
 
-## Two Writers, One Repository
+## ✍️ Two Writers, One Repository
 
 There is one genuinely subtle problem in this design, and it deserves an
 honest treatment: the app is not the only writer. The laptop's working copy
 — where content skills also edit books — pushes to the same `main` branch.
-Two write locations, one source of truth.
+Two write locations, one source of truth. What could possibly go wrong?
 
-The solution is layered, and beautifully boring. Every write pulls first,
-so both sides stay current. A file lock serializes the app's own writers
-(the production server runs multiple gunicorn workers — without a lock, two
-simultaneous submits could interleave their git operations). And if a
-rebase ever fails, the app aborts cleanly and surfaces the situation as
-"pull the laptop changes first" — a message, not a mess. Conflicts are
-unlikely in practice, since different books live in different files; the
-design just refuses to let *unlikely* mean *unhandled*.
+Quite a lot, actually — which is why the solution is layered, and
+beautifully boring. Every write pulls first, so both sides stay current. A
+file lock serializes the app's own writers (the production server runs
+multiple gunicorn workers — without a lock, two simultaneous submits could
+interleave their git operations). And if a rebase ever fails, the app
+aborts cleanly and surfaces the situation as "pull the laptop changes
+first" — a message, not a mess. Conflicts are unlikely in practice, since
+different books live in different files; the design just refuses to let
+*unlikely* mean *unhandled*.
+
+**Key insight:** guardrails aren't glamorous — until the day they are.
 
 One more safety net rounds out the picture: in development, a `GIT_PUSH`
 switch keeps every commit local, so no amount of testing can accidentally
 deploy the live site. The publish button simply doesn't exist on a dev box.
-Guardrails aren't glamorous — until the day they are.
 
-> **[Figure 4]** *The write pipeline.* Generate a wide (21:9) horizontal
-> step diagram, flat design, dark background: five rounded steps connected
-> by amber arrows, each with a small icon and a label. Steps, exactly:
-> "1 · git pull --rebase" (down-arrow icon), "2 · edit Markdown" (pencil
-> icon), "3 · lint — check_books.py" (checklist icon), "4 · commit" (git
-> commit dot icon), "5 · push → site deploys" (rocket-free: use a paper
-> plane icon). Around steps 1–4, a subtle dashed teal outline labelled
-> "file lock — one writer at a time". Under step 3, a small red branch
-> arrow labelled "lint fails → nothing is committed". Use exactly these
-> labels. Suggested caption: "Every write, no exceptions: pull, edit, lint,
-> commit, push."
+<figure class="fig">
+<img src="/boeggn-app/images/fig4.jpg" alt="A parchment-and-brass 'Mechanical Workflow Engine Schematic' on blueprint paper: five ornate framed contraptions labelled Pull, Edit, Validate, Commit and Push, joined by glowing tubes; from the Validate vessel an eruption of red-and-purple lightning clouds carries signs reading 'Failure Abort' and 'Engine Shutdown Sequence Initiated'." loading="lazy">
+<figcaption><span class="fig-n">Figure 4</span> The write pipeline: pull, edit, validate, commit, push. When validation fails, everything stops. By design.</figcaption>
+</figure>
 
 The architecture, in short, is a bet: that the discipline which saved the
 site — parity, plain files, one source of truth — could also power its
