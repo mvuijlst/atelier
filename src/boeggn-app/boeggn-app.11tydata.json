@@ -1,0 +1,10 @@
+{
+  "layout": "essay.njk",
+  "tags": ["boeggn-app"],
+  "piece": "Built in a day",
+  "pieceSlug": "boeggn-app",
+  "pieceRoot": "/boeggn-app/",
+  "pieceSub": "Rome wasn't built in a day. This app was. The complete story of the booklog's mobile companion",
+  "pieceAccent": "#0F8B8D",
+  "pieceAccentSoft": "#79C6C2"
+}
