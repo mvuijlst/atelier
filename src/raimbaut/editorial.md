@@ -9,9 +9,7 @@ status: draft
 # The editorial work
 
 A transcription, however accurate, is not yet an edition. Between the corpus
-and the published site sits a layer of editorial decisions, and this section
-lays them out, because they are where a project like this earns or loses its
-claim to be scholarly. The decisions themselves required judgement; their
+and the published site sits a layer of editorial decisions. The decisions themselves required judgement; their
 application, [as the previous section
 argued](/raimbaut/pipeline/#what-the-pipeline-adds-up-to), was made mechanical, so that
 each one is written down in a rule or a data file rather than scattered
@@ -66,8 +64,8 @@ know what the typescript actually says never has to trust the normalized
 view, because the unnormalized one is a click away and the page ids line the
 two up exactly.
 
-An admission belongs here. The technically obvious way to give readers the
-unnormalized page would have been to show the page itself: the scan, or the
+I realise that the technically obvious way to give readers the
+unnormalized page would have been to show the actual page itself: the scan, or the
 PDF, embedded page by page. I did not do that, and the reason is not
 rational. I wanted to *create* a facsimile, a typescript page rebuilt in
 type rather than reproduced in pixels, and this is the one place in the
@@ -83,7 +81,7 @@ the PDF would be part of it.
 The typescript's figures are where the work most clearly stops being
 conversion, so they deserve their own exhibit. My father drew his diagrams
 by hand, on graph paper, and the scans of those drawings are legible the
-way a photocopied blackboard is legible. The edition treats them under the
+way a photocopied photo of a blackboard is legible. The edition treats them under the
 same fidelity rule as the text: the facsimile view shows the original
 drawing, and the reading views show a redesign, labeled as a redesign
 ("figure redessinée d'après le schéma de la p. 52"), so no reader can
@@ -92,7 +90,7 @@ mistake my line for his.
 Two examples. In Chanson II, a diagram maps the poem's syntactic breaks
 against its strophic structure, showing that nearly every strophe is
 syntactically chained to the next. I redrew it in Figma, exported it as
-SVG, and wired it into the page so that it recolors itself with the site's
+SVG, and wired it into the page so that it recolours itself with the site's
 light and dark themes. In the introduction, a grouped bar chart compares
 thirteen troubadours on three factors: surviving chansons, manuscripts,
 occurrences. For the reading views I replaced it with a slopegraph, one
@@ -122,7 +120,7 @@ original two clicks away.
 <img class="theme-light" src="/raimbaut/images/fig6c-light.png" alt="The redesigned diagram in the reading view." loading="lazy">
 <img class="theme-dark" src="/raimbaut/images/fig6c-dark.png" alt="The redesigned diagram in the reading view." loading="lazy">
 </div>
-<figcaption><span class="fig-n">Figure 6</span> The fidelity rule applied to a figure. The facsimile keeps my father's graph-paper drawing; the reading views carry a redesign, labeled as such, that recolors with the site's theme. <span class="provenance">Scan of vol. 1 (printed p. 52); facsimile and web views of <a href="https://raimbaut.yusupov.cloud/chansons/2/">raimbaut.yusupov.cloud/chansons/2/</a>.</span></figcaption>
+<figcaption><span class="fig-n">Figure 6</span> The fidelity rule applied to a figure. The facsimile keeps my father's graph-paper drawing; the reading views carry a redesign, labeled as such, that recolours with the site's theme. <span class="provenance">Scan of vol. 1 (printed p. 52); facsimile and web views of <a href="https://raimbaut.yusupov.cloud/chansons/2/">raimbaut.yusupov.cloud/chansons/2/</a>.</span></figcaption>
 </figure>
 
 <figure class="fig">
@@ -136,13 +134,11 @@ original two clicks away.
 
 ## The footnotes
 
-The thesis has 1,257 footnotes, and they were the hardest apparatus problem,
-for a reason that is worth spelling out because it will recur in any project
-of this kind. The typescript numbers its notes per page, starting over at 1
+The thesis has 1,257 footnotes, and they were the hardest apparatus problem. The typescript numbers its notes per page, starting over at 1
 on each page; notes sometimes overflow to the foot of the following page;
 and the notes lean heavily on positional shorthand, *ibid.*, *op. cit.*,
-*ouv. cité*, which works on paper because the previous note is physically
-adjacent, an inch below the last one.
+*ouv. cité*, which works on paper because often (but not always!) the previous note is physically
+adjacent.
 
 Digitally, all three properties break. Pagination disappears in a reflowing
 web page, so per-page numbering becomes meaningless; the pipeline therefore
@@ -169,6 +165,8 @@ design accepts that: a small hand-authored overrides file corrects the cases
 the script gets wrong, and it, rather than any script output, is where the
 human judgement accumulates. One abbreviation resisted resolution entirely
 and is listed as unresolved rather than guessed at.
+
+Late in the process I realised the OCR step had misinterpreted a slew of *RvO* sigla as *Rv0* — a simple global search and replace turned that zero into a capital O, and a regeneration pass later each of those instances was rendered as the correct siglum-with-hovercard. 
 
 ## The internal references
 
@@ -215,7 +213,7 @@ the claim looks like when it is checkable.
 
 Two further editorial signals reach the reader directly. The typescript
 carries handwritten corrections and notes, and they are not my father's:
-they are in the hands of his friend, colleague and promotor Raoul Blomme
+they are in the hands of his best friend, colleague and promotor Raoul Blomme
 and of Hans-Erich Keller, a professor with whom he corresponded. The
 edition preserves them and marks each with a small pen sign (✎) where it
 occurs, because they are part of what this document is: the traces of the

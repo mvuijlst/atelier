@@ -8,7 +8,7 @@ status: draft
 # Where generative AI entered (or not)
 
 Accounts of projects like this one tend to say "AI" the way one says
-"electricity," and the imprecision matters, because different models did
+"electricity," and her it sort of works, because different models did
 different jobs under different amounts of supervision, and the trust you can
 place in the result depends on knowing which was which. Three models touched
 the text of the edition, in three distinct roles, and the corpus records
@@ -31,8 +31,8 @@ verse wrapped in blocks tagged with the language (`::: {lang=oc}`), and each
 page's footnotes as numbered Markdown notes. The output was one Markdown
 file per page, named for its page id.
 
-Why a vision model rather than OCR software? [The previous
-section](/raimbaut/#the-source) gave the history. OCR had been tried on this typescript years earlier, while my
+[The previous
+section](/raimbaut/#the-source) tells why I used a vision model rather than OCR software. OCR had been tried on this typescript years earlier, while my
 father was alive, and lost the race against retyping within a few dozen
 pages; the text layer inside the library's own digitization shows what the
 conventional route still produces. A vision language model reads the page
@@ -41,14 +41,13 @@ character must be and what the formatting around it means. On this material
 the improvement was large enough to change the nature of the project, from
 a transcription effort measured in months to one measured in hours.
 
-The same mechanism is also the risk, and it needs saying just as plainly. A
+The same mechanism is also the risk: a
 model that uses context to read a faint word can use the same context to
 produce a *plausible* word that is not the word on the page. An OCR error
 announces itself by looking like garbage, whereas a vision-model error looks
 like fluent text and announces nothing. On the French prose this risk stayed
 manageable, and GPT-4o's output there was close to publication quality. On
-the Occitan verse it was not manageable at all, and how I found that out is
-the next part of the story.
+the Occitan verse it was not manageable at all.
 
 ## Claude: the verse, after a controlled comparison
 
@@ -64,8 +63,8 @@ So the verse pages were transcribed twice, by two different models, and the
 outputs were machine-compared. **Claude**, working interactively inside
 Claude Code (an agentic coding environment) rather than through scripted
 API calls, transcribed the verse pages in session; a diff report then laid
-the two transcriptions side by side, hunk by hunk. Across the 43 pages of
-that comparison there were 997 differing hunks, and reading them settles
+the two transcriptions side by side, chunk by chunk. Across the 43 pages of
+that comparison there were 997 differing chunks, and reading them settles
 the question at a glance. Where the typescript of Chanson I reads *Cars,
 douz e fenhz del bederesc / m'es sos bas chanz*, Claude's transcription
 says exactly that, while GPT-4o offered *Canz, doncs e fenhz del bedeneira
@@ -75,17 +74,14 @@ French prose was inventing plausible Occitan.
 
 <figure class="fig">
 <img src="/raimbaut/images/fig3.png" alt="A diff listing showing pairs of readings of Occitan verse, one incorrect and one correct, next to the typewritten source lines." loading="lazy">
-<figcaption><span class="fig-n">Figure 3</span> Two vision models read the same typewritten strophe. The differences are not noise: on Old Occitan, GPT-4o produces fluent inventions, and only a controlled comparison makes that visible, because nothing about the wrong text <em>looks</em> wrong. <span class="provenance"><a href="https://github.com/mvuijlst/raimbaut/blob/main/review-diff.md"><code>review-diff.md</code></a> in the repository (restored from its history — see <a href="/raimbaut/annexes/c/">Annex C</a>), pages compared during the first transcription attempt; scan of vol. 1.</span></figcaption>
+<figcaption><span class="fig-n">Figure 3</span> Two vision models read the same typewritten strophe. On Old Occitan, GPT-4o produces fluent inventions, and only a controlled comparison makes that visible because nothing about the wrong text <em>looks</em> wrong if you don't know the language. <span class="provenance"><a href="https://github.com/mvuijlst/raimbaut/blob/main/review-diff.md"><code>review-diff.md</code></a> in the repository (restored from its history — see <a href="/raimbaut/annexes/c/">Annex C</a>), pages compared during the first transcription attempt; scan of vol. 1.</span></figcaption>
 </figure>
 
 The corpus that everything else is built on is therefore a documented
 hybrid. GPT-4o's transcription is the base; the verse and other
 Occitan-heavy pages carry Claude's transcription instead; and a provenance
 table records, for every one of the 586 pages, which model's text it
-carries. The final tally is 499 pages from GPT-4o and 87 from Claude. This
-is also the honest answer to anyone who wants to attribute the
-transcription to a model: the corpus's own records attribute it page by
-page, which is worth more than any statement in prose.
+carries. The final tally is 499 pages from GPT-4o and 87 from Claude. 
 
 On top of the transcription came the checking. The Occitan was then read
 against external reference points, Walter Pattison's 1952 edition of
@@ -94,7 +90,7 @@ rule: reference editions are used to *detect* suspicious readings, never to
 replace my father's. Where his text differs from Pattison, that difference
 is his editorial judgement, which is precisely the matter of the thesis,
 and the checking pass exists to make sure the difference is his and not a
-model's.
+model's. Every difference is presented to me to resolve, never resolved automagically.
 
 ## GPT-4o-mini: one narrow, boring job
 

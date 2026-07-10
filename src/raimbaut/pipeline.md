@@ -18,7 +18,7 @@ reasoning behind it.
 
 <figure class="fig fig-diagram">
 <img class="svg-adapt" src="/raimbaut/images/fig4.svg" alt="Flow diagram from PDF scans through transcription, a Markdown corpus, derived JSON data files and a static-site generator to a deployed website.">
-<figcaption><span class="fig-n">Figure 4</span> The pipeline. Everything left of the corpus ran once; everything right of it is deterministic and can be regenerated at any time. <span class="provenance">Drawn for this piece; the authoritative prose version is <a href="https://github.com/mvuijlst/raimbaut/blob/main/WORKFLOW.md"><code>WORKFLOW.md</code></a> in the repository.</span></figcaption>
+<figcaption><span class="fig-n">Figure 4</span> The pipeline. Everything above the corpus ran once; everything below it is deterministic and can be regenerated at any time. <span class="provenance">Drawn for this piece; the authoritative prose version is <a href="https://github.com/mvuijlst/raimbaut/blob/main/WORKFLOW.md"><code>WORKFLOW.md</code></a> in the repository.</span></figcaption>
 </figure>
 
 ## A spine of page ids
@@ -43,7 +43,7 @@ previously](/raimbaut/ai/#gpt-4o-mini-one-narrow-boring-job)). The map lives
 in one small CSV, and the site can resolve a citation
 like "p. 46" to the right place because of it.
 
-## The corpus, and its normalization
+## The corpus and its normalization
 
 The corpus is 586 Markdown files, one per typescript page, and it is the
 single source of truth for the edition's text. Everything else in this

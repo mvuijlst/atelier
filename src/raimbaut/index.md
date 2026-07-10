@@ -23,7 +23,7 @@ published. Since July 2026 it has been a website:
 <img class="theme-light" src="/raimbaut/images/fig1c-light.png" alt="The same strophe rendered on the finished chanson page." loading="lazy">
 <img class="theme-dark" src="/raimbaut/images/fig1c-dark.png" alt="The same strophe rendered on the finished chanson page." loading="lazy">
 </div>
-<figcaption><span class="fig-n">Figure 1</span> One strophe, three states: the 1981 typescript, the Markdown corpus that is the edition's source of truth, and the published page. <span class="provenance">Scan of vol. 1, page id v1p051; <a href="https://github.com/mvuijlst/raimbaut/blob/main/corpus/v1p051.md"><code>corpus/v1p051.md</code></a>; <a href="https://raimbaut.yusupov.cloud/chansons/1/">raimbaut.yusupov.cloud/chansons/1/</a>.</span></figcaption>
+<figcaption><span class="fig-n">Figure 1</span> The 1981 typescript, the Markdown corpus that is the edition's source of truth, and the published page. <span class="provenance">Scan of vol. 1, page id v1p051; <a href="https://github.com/mvuijlst/raimbaut/blob/main/corpus/v1p051.md"><code>corpus/v1p051.md</code></a>; <a href="https://raimbaut.yusupov.cloud/chansons/1/">raimbaut.yusupov.cloud/chansons/1/</a>.</span></figcaption>
 </figure>
 
 Open any of its thirty-nine chansons and you get the Occitan poem with my
@@ -46,8 +46,7 @@ handwritten corrections on the typescript marked where they occur. Anyone who wa
 edition against the physical thesis (it sits in the Ghent University Library
 at Rozier 9, call number BIB.L14X.1981.VUIJLSTEKE) can do so page by page.
 
-This piece is about how that website came to exist, and it makes one claim up
-front. A vision model, meaning an AI system that reads images rather than
+This piece is about how that website came to exist. A vision model, meaning an AI system that reads images rather than
 text, made the first step feasible where conventional OCR had failed. But "AI
 read my father's thesis and made a website" is not what happened, and the
 interesting part is everything that sentence skips. The edition was produced
@@ -62,7 +61,7 @@ system, because the world is full of valuable scholarship in exactly this
 condition — typed, bound, shelved, and invisible — and the cost of
 reactivating it has just fallen through the floor.
 
-One number fixes the scale of that last sentence: the transcription, the
+To put things in perspective: the transcription, the
 checking, the data pipeline and the website were built from scratch by one
 person in two days, on 4 and 5 July 2026. Later sections will qualify that number twice
 over. The two days bought a first trustworthy edition rather than a finished
@@ -71,7 +70,7 @@ two days spent something that took far longer to acquire, because the design
 of the edition, from its information architecture down to how navigation
 behaves on a phone, drew on my twenty-odd years of working as an information
 architect. Still, as a measure of what used to require a funded project and
-a team, two days is the honest figure.
+a team, it took two calendar days.
 
 ## The source
 
@@ -87,11 +86,11 @@ filologie)*, which is to say a doctoral thesis in Romance philology. Its
 subject is the chansonnier of [Raimbaut d'Orange](https://fr.wikipedia.org/wiki/Raimbaut_d%27Orange), a twelfth-century troubadour,
 and it works through his thirty-nine chansons one by one: for each poem a
 critical discussion of readings and interpretation (the *remarques*), then the
-established Occitan text with a facing French translation. Around that core
+established (but sometimes reinterpreted) Occitan text with a facing French translation. Around that core
 sit an introduction, a concluding essay on Raimbaut's poetics, a bibliography,
 and indexes.
 
-The author was my father, Marc Vuijlsteke. He died in 2009. I am his sole
+The author was my father, Marc Vuijlsteke. He died in 2009, and I am his sole
 heir, which settles the rights question entirely; there is no one else to ask.
 That is all this piece needs to say about rights, though not quite all it
 needs to say about motive. He never stopped intending to return to this work,
@@ -102,11 +101,11 @@ the method, which is what you are reading this for, the relevant part is
 simpler: I did not want to be the last person who could still find this
 thesis.
 
-It is findable, technically speaking. A doctoral thesis is a public document:
+It is of course *findable*, technically speaking. A doctoral thesis is a public document:
 submitted, defended, deposited, catalogued. This one has sat in the
 university library for forty-five years, and the library has digitized all
 three volumes; a reasonably good scan exists online for anyone who already
-knows to look for it, with an automatically generated text layer behind the
+knows to look for it and can get access to Ghet University library digital files. It has an automatically generated text layer behind the
 page images that I will have more to say about shortly. What the thesis never
 had is a form in which a person could *encounter* it: no publisher, no
 journal, no entry in the bibliographies and databases where people actually
@@ -122,11 +121,9 @@ in the form of 1970s black-and-white photocopies of such poor quality that I
 decided not to reproduce them at all; the edition instead links each chanson,
 where possible, to publicly available images of the same manuscripts from the
 libraries that hold them, and several of those are already in place. Posting
-the two main volumes would have been preservation of a sort, and I want to be
-precise about why it would not have been enough, because the answer is not
-that PDFs are ugly.
+the two main volumes would have been preservation of a sort but it would not have been enough.
 
-The first reason is that a scan preserves the page but loses the *apparatus*,
+The first reason for that is that a scan preserves the page but loses the *apparatus*,
 the machinery of footnotes, abbreviations, and cross-references through which
 a scholarly text actually functions. The thesis has 1,257 footnotes, numbered
 per page. It cites through 24 bibliographic sigla, defined once, deep in
@@ -136,7 +133,7 @@ antecedent, sometimes hundreds of pages earlier. On paper, in hand, with a
 finger holding the bibliography open, all of this works. In a scanned PDF
 every one of those pointers is dead.
 
-The second reason is that OCR does not revive them, and on this typescript
+The second reason is that a PDF does not revive the document, and on this typescript
 OCR barely functions at all. I say that with some history behind it. Years
 ago, while my father was still alive, he and I went down exactly this road:
 we ran a few dozen pages through OCR software and concluded that correcting
@@ -147,13 +144,13 @@ had given up on, and it is abysmal. The typescript itself is cleaner than
 those results suggest. My father typed it on an IBM Selectric with two type
 elements, a regular monospace face and an italic one, so the pages carry true
 italics rather than the usual typewriter improvisations; underlining he
-reserved for the sigla, and there are corrections in pen, in the hands of
+reserved for the sigla, and there are corrections in pencil, in the hands of
 the thesis's first readers. What defeats
 OCR is the combination: type that is faint in places, formatting that carries
 meaning (an underline is a siglum, a run of capitals is a name), handwritten
 interventions, and long stretches of Old Occitan, a language OCR training
 data has no particular reason to know. And even a correct OCR reading of a
-siglum would only produce two grey letters. The apparatus stays dead either
+siglum would only produce two or three grey letters. The apparatus stays dead either
 way.
 
 <figure class="fig">

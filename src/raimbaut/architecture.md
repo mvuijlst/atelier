@@ -18,7 +18,7 @@ earlier discussions, and entries in three indexes pointing forward from
 words, names and works to the pages that treat them. That is a graph, and
 in 1981 the only way to publish a graph was to serialize it: commentary
 printed before the poem it discusses, notes at the feet of pages, the
-bibliography and indexes at the far end of volume 2, and every connection
+bibliography and indexes at the far end of volume 2, photocopies of the source material in volume 3, and every connection
 between them reduced to a page number the reader must chase by hand.
 
 The central design decision of the edition was to undo the serialization

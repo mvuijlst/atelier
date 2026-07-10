@@ -10,7 +10,7 @@ status: draft
 ## For anyone facing a shelf like this one
 
 The method transfers, and these are the parts of it I would carry to the
-next hidden monograph, stated as directly as I can manage.
+next hidden monograph:
 
 **Make a corpus, and make it the only source of truth.** The single most
 consequential decision in the project was that the transcription's output
@@ -24,8 +24,8 @@ depends on repeating it.
 **Use a vision model for what OCR cannot do, and distrust it in proportion
 to its fluency.** On faint typescript the vision model was the difference
 between a feasible project and an abandoned one. It is also a reader that
-never produces visible garbage, only plausible text, so its errors hide.
-Budget the verification accordingly, and spend the careful, interactive
+never produces visible garbage, only plausible text, so its errors are more or less hidden.
+Budget the verification accordingly, and spend careful, interactive
 checking where a plausible error costs the most; here, that was the
 Occitan verse, checked against reference editions with the standing rule
 that references detect problems and never overrule the source.
@@ -60,7 +60,7 @@ layout cannot serve both. [Splitting them into a reading view and a
 facsimile](/raimbaut/editorial/#one-text-two-presentations-of-fidelity) dissolved what would otherwise have been a running argument with
 myself about every dash.
 
-**Budget for design, honestly.** This is the lesson people will most want
+**Budget for design.** This is the lesson people will most want
 to skip. The transcription became cheap; the edition did not, because an
 edition is a designed object, and the design here consumed experience that
 does not compress into two days. If the design background is not on hand,
@@ -68,17 +68,14 @@ the choices are real and respectable: keep the shape radically simple,
 borrow the patterns of an edition you admire, or bring in someone who does
 this work. What will not happen is a model conjuring the information
 architecture; deciding what the site *is* remained entirely human work in
-this project, and I see nothing on the horizon that changes that.
+this project.
 
 ## What this does not prove, and what remains wrong
-
-A frank list, because the failure modes of a piece like this are
-triumphalism and vagueness, and I would rather be specific.
 
 **Errors remain in the text.** The corpus was produced by a model whose
 errors read fluently, and although the hard passages were checked closely
 and the review lists worked through, I have not collated all 586 pages
-word by word against the scans. Some misreadings have certainly survived.
+word by word against the scans. Misreadings have certainly survived.
 What I can say is that the system is built for the finding of them: every
 page links to its provenance, doubtful readings are marked as doubtful,
 and a correction, once reported, is a one-line edit followed by a
@@ -103,7 +100,7 @@ only as transferable as the person doing the checking.
 **Sustainability is a human problem that static files only shrink.** The
 folder of HTML will outlive its toolchain, but a domain must be renewed,
 a server bill paid, and for the moment every one of those promises is
-kept by one person. The honest mitigation is the repository and the
+kept by one person. The mitigation is the repository and the
 corpus themselves: the edition can be rebuilt and rehosted by anyone,
 which is a weaker guarantee than an institution and a stronger one than
 most websites have.
@@ -118,13 +115,12 @@ about projects like this by default. It is not what happened.
 
 ## What comes next
 
-The project as described here ends at a working edition, but it points
-somewhere, and I want to say where out loud. The pipeline was built for
-one thesis; almost nothing in its shape is specific to that thesis. A
+The project as described here ends at a working edition. The pipeline was built for
+one thesis, but almost nothing in its shape is specific to that thesis. A
 corpus of page files with stable ids, normalization by explicit rules,
 harvested apparatus with review reports, a static edition with reading
 and facsimile views — that pattern would serve a very large number of
-typed and shelved works, and my intention is to turn it into a freely
+typed and shelved works, and my intention is to turn at some point it into a freely
 available tool so that the next person facing such a shelf starts from
 something better than an empty repository. This is future work in the
 real sense, meaning unscheduled, and its shape is not settled. Some of it
