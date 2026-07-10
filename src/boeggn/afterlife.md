@@ -53,7 +53,7 @@ a naming convention for flat files. The ghost of WordPress!
 <img src="/boeggn/images/fig12c.png" alt="Chat transcript: the report — the new entry summarized, the cover placed with a caveat about its size, no new term pages needed, linter clear, build clean, not committed or pushed." loading="lazy">
 </div>
 <img src="/boeggn/images/fig12d.jpg" style="margin-top: 0.9rem" alt="The Boeggn 'Aan het lezen' shelf: Reaper's Gale first at 52%, alongside The Odyssey, Ice, The Yiddish Policemen's Union and Victorian Psycho." loading="lazy">
-<figcaption><span class="fig-n">Figure 12</span> Adding a book, as it actually looks: <em>(a)</em> the one-line request and the first sanity checks; <em>(b)</em> the entry it writes, linted and built; <em>(c)</em> the report — cover caveat included, nothing committed without my say-so; <em>(d)</em> a few minutes later, <em>Reaper's Gale</em> on the aan-het-lezen shelf, gauge at 52%.</figcaption>
+<figcaption><span class="fig-n">Figure 13</span> Adding a book, as it actually looks: <em>(a)</em> the one-line request and the first sanity checks; <em>(b)</em> the entry it writes, linted and built; <em>(c)</em> the report — cover caveat included, nothing committed without my say-so; <em>(d)</em> a few minutes later, <em>Reaper's Gale</em> on the aan-het-lezen shelf, gauge at 52%.</figcaption>
 </figure>
 
 *Note that I have [changed my mind](/boeggn-app) since I wrote this. The mechanism of adding a book is still in place, but the interface is now its own (mobile) application.*

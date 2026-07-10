@@ -52,7 +52,7 @@ single day.
 <img src="/boeggn/images/desktop--home-before.jpg" alt="The old Boeggn home page: a light card grid of book reviews with cropped covers, in the WordPress theme." loading="lazy">
 <img src="/boeggn/images/desktop--home-after.jpg" alt="The new Boeggn home page: a dark bookshelf of covers, bottom-aligned, spines out." loading="lazy">
 </div>
-<figcaption><span class="fig-n">Figure 8</span> Before and after: the old WordPress home next to the new bookshelf home. Same content, different century.</figcaption>
+<figcaption><span class="fig-n">Figure 9</span> Before and after: the old WordPress home next to the new bookshelf home. Same content, different century.</figcaption>
 </figure>
 
 ## Every book gets its own room
@@ -90,7 +90,7 @@ I know this is nothing earth-shattering — I think Netflix does or did the same
 <img src="/boeggn/images/fig9b.jpg" alt="Mort's book page, its chrome tinted cold blue-grey by the cover." loading="lazy">
 <img src="/boeggn/images/fig9c.jpg" alt="Reaper's book page, its chrome tinted violet by the purple cover." loading="lazy">
 </div>
-<figcaption><span class="fig-n">Figure 9</span> Three books, three rooms: <em>Iron Flame</em>, <em>Mort</em>, <em>Reaper</em>. Same layout throughout; the tint is extracted from each cover, not hand-picked.</figcaption>
+<figcaption><span class="fig-n">Figure 10</span> Three books, three rooms: <em>Iron Flame</em>, <em>Mort</em>, <em>Reaper</em>. Same layout throughout; the tint is extracted from each cover, not hand-picked.</figcaption>
 </figure>
 
 ## Smaller pleasures

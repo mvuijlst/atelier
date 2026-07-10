@@ -101,7 +101,7 @@ structure. Good for him.
 
 <figure class="fig">
 <img src="/boeggn/images/plato.jpg" alt="The Symposium page on the new site: Plato, four stars out of five, 'Project Gutenberg, 385-380 v. Chr., 144 blz.', read on 20 May 2012." loading="lazy">
-<figcaption><span class="fig-n">Figure 10</span> The monument, as it renders today — via the legacy-field fallback, and nobody can tell. Note the year: <em>385-380 v. Chr.</em> A strict parser wants a single four-digit year; Plato declines to provide one.</figcaption>
+<figcaption><span class="fig-n">Figure 11</span> The monument, as it renders today — via the legacy-field fallback, and nobody can tell. Note the year: <em>385-380 v. Chr.</em> A strict parser wants a single four-digit year; Plato declines to provide one.</figcaption>
 </figure>
 
 
@@ -132,7 +132,7 @@ difference between a bibliography and a search result.
 Terry Pratchett (auteur), Indira Varma (stem), Peter Serafinowicz (voetnoten), Bill Nighy (DEATH)
 Penguin Audio, 2022, 11u 36m</code></pre>
 <img src="/boeggn/images/carpejugulum.png" alt="The rendered Carpe Jugulum header: Discworld #23, Terry Pratchett (auteur) large; Indira Varma (stem), Peter Serafinowicz (voetnoten) and Bill Nighy (DEATH) smaller; then Penguin Audio · 2022 · 11u 36m." loading="lazy">
-<figcaption><span class="fig-n">Figure 11</span> One book, three eras of data: <em>(a)</em> the author taxonomy as the database stored it, backwards; <em>(b)</em> the free-text <code>publicatie</code> field, roles and bibliography in prose; <em>(c)</em> the rendered <em>Carpe Jugulum</em> header, role-aware — author large, contributors smaller, Bill Nighy still DEATH.</figcaption>
+<figcaption><span class="fig-n">Figure 12</span> One book, three eras of data: <em>(a)</em> the author taxonomy as the database stored it, backwards; <em>(b)</em> the free-text <code>publicatie</code> field, roles and bibliography in prose; <em>(c)</em> the rendered <em>Carpe Jugulum</em> header, role-aware — author large, contributors smaller, Bill Nighy still DEATH.</figcaption>
 </figure>
 
 None of which the visitor sees as a *feature*, of course. They see a credits
