@@ -453,8 +453,11 @@ dialog#brief-modal {
   border: 1px solid var(--hairline); border-radius: 10px;
   width: min(44rem, 92vw); max-height: 82vh;
   padding: 1.3rem 1.5rem;
-  display: flex; flex-direction: column;
 }
+/* Only lay out as a flex column when actually open — a bare `display: flex`
+   would override the browser's default `display: none` for a closed dialog
+   and leave the modal sitting in the page. */
+dialog#brief-modal[open] { display: flex; flex-direction: column; }
 dialog#brief-modal::backdrop { background: rgba(10, 12, 16, 0.7); }
 #brief-modal .bm-head {
   flex: none;

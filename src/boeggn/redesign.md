@@ -8,15 +8,15 @@ status: draft
 
 # The evening
 
-The emergency ended before dinner, and I could continue working without worrying about the site. Everything I did after the work day ended was *fun*.
+The emergency ended before dinner, and I could continue working my real job without worrying about the site. Everything I did after the work day ended was *fun*.
 
 The strangler-fig discipline — first reproduce exactly, then improve — has a
 reward built into it, which is that once parity is banked, improvement is
 free. I no longer had to weigh any change against "but then I'd have to dig
 into the old theme", the clause that had killed every redesign impulse for a
 decade, because the old theme was no longer load-bearing. It went in the bin
-that same evening. I was *not* about to refactor it. The new front end is greenfield,
-written from scratch against clean Markdown content, and it took most of the
+that same evening: the actual WordPress theme was gone since the morning, but I also dropped every single trace of html and css I had around the content. I was *not* about to refactor it. The new front end is greenfield,
+written from scratch against clean Markdown content, it took most of the
 evening and a decent slice of the night, and it contained (at least *in utero*) more or less every
 small idea I had been quietly filing away for years under *someday*.
 
@@ -28,7 +28,7 @@ really a diary; it's a *library*. The old home page had a card view with cropped
 states became first-class shelves — *gelezen* (read), *lezende*
 (currently reading, with a progress gauge), *te lezen* (the to-read pile,
 a category of book I pretend to be at peace with) — instead of the old arrangement,
-where "currently reading" was, of course, a category, because when all you
+where "currently reading" was, of course, a (mostly unused) category, because when all you
 have is a taxonomy, everything looks like a term.
 
 Typography: IBM Plex. I like IBM Plex. Self-hosted, serif for reading and mono for the
@@ -52,8 +52,7 @@ single day.
 The very subtle detail I am most pleased with: **each book's page takes its colour from
 the book's cover.** The dominant colour is extracted from the cover image and
 becomes an accent that tints the page — background, surfaces, rules, the
-metadata text — so that the page for a Penguin orange paperback and the page
-for some gloomy black-metal fantasy tome feel like different rooms in the
+metadata text — so that the page for different books feel like different rooms in the
 same house.
 
 The trick is doing that without ever letting a cover break the page. The raw
@@ -75,9 +74,7 @@ modern CSS:
 --meta:#a99b8c;    --meta:color-mix(in oklab, var(--base-meta)    80%, var(--cover));
 ```
 
-No design system on earth would have signed off on "the palette is different
-on every page and is chosen by whoever designed the book cover", and that is
-exactly why it delights me. I was fully prepared to put a lot of work into this, but it turns out Hugo has exactly the necessary tools to do exactly this for exactly the same reason I wanted it -- the kind of attention to details that warms the cockles my heart, like when I discovered `pluralise` in Python.
+I know this is nothing earth-shattering — I think Netflix does or did the same — but it's something I'd not done before and always wanted to do. I was fully prepared to put a lot of work into this (or rather have AI put in the work, obviously), but it turns out Hugo has exactly the necessary tools to do exactly this for exactly the same reason I wanted it — the kind of attention to details that warms the cockles my heart, like when I discovered `pluralise` in Python.
 
 <figure class="fig">
 <div class="fig-row">

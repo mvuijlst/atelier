@@ -9,8 +9,7 @@ status: draft
 # The authors, or: the actual rabbit hole
 
 Every project of this kind has one place where the floor gives way. Not the
-emergency — solved in under two hours — and not the redesign, which was an
-evening of pure pleasure. The place where this project's floor gave way was
+emergency — solved in under two hours — and not the redesign, which was an hour or two of iterations. The place where this project's floor gave way was
 the author data.
 
 ## Double bookkeeping
@@ -23,10 +22,9 @@ maintain separate name fields.
 
 Second: the *same authors were in the database a second time*, inside the
 free-text `publicatie` field — and the second copy was by far the
-richer one, because the free text had *roles*. Most of the time. For comics:
-*tekst*, *beeld*, *kleur*, *letters* — writer, art, colours, lettering,
-the whole studio. For translated books: the *vertaling*. For audiobooks: the
-voices. All of it in prose, formatted by years of "I guess this feels OK".
+richer one, because the free text had *roles* (not most of the time but often). For comics, 
+writer, art, colours, lettering. For translated book, the translator. For audiobooks, the
+voices. All of it in prose, formatted by years of "I guess this feels OK, it's how I used to do itr whan I was 8 and wrote it on literal index cards".
 
 One specimen in the collection, an audiobook from 2022 — *Carpe Jugulum*,
 Discworld #23:
@@ -39,9 +37,7 @@ publication: |-
 
 Terry Pratchett, author. Indira Varma, narration. Peter Serafinowicz,
 *footnotes*. And Bill Nighy, whose role in my database is **DEATH** — which
-is entirely correct, he voices the character DEATH, and which no schema
-designed in advance would ever have permitted. This data was precious, and it was completely unqueryable. It deserved to be structured,
-and it deserved to be structured without losing Bill Nighy as DEATH.
+is entirely correct, he voices the character DEATH. I could say something like what AI suggested: "This data was precious, and it was completely unqueryable. It deserved to be structured, and it deserved to be structured without losing Bill Nighy as DEATH." The reality is that I just added it because I could, and I wanted to keep it for the same reason. 
 
 ## The target
 
@@ -71,7 +67,7 @@ live in the templates, where they belong.
 ## Much more semi than automatically
 
 Between those two code blocks lies the rabbit hole. I converted the field
-semi-automatically, and I need the record to show that it was much more
+semi-automatically, and the timestamps on the repository will sadly show that it was much more
 *semi* than *automatically*.
 
 The automatic half was a converter script with one governing virtue: it is
@@ -88,7 +84,7 @@ while.
 
 Because all those years of formatted-by-feel produces every failure mode
 you can imagine and several you cannot. Comic runs whose "year" is a date
-range ("januari 2006 – juli 2011"). Publishers that are two publishers.
+range ("januari 2006 – juli 2011") and a page count that is "5 x 12 nummers". Another page count that was "gelijk duuzd teveel". Publishers that are two publishers. A publication year of "2001+2005". 
 Credits whose names almost-but-don't match the taxonomy because one of them
 was entered surname-first in 2011 and first-name-first in 2014. And my
 favourite, an actual import bug rather than a data quirk: a list of names
@@ -111,9 +107,9 @@ structure. Good for him.
 
 ## Why bother
 
-Roles now *mean* something. Author
+Roles now *mean* something, even if the roles themselves aren't *really* structured. I kind of hardcoded that author
 names render large on a book page; translators, narrators and other
-contributors render smaller — the typography knows who made the book. A
+contributors render smaller. A
 comic credits its whole team, each name a link. And an author's own page
 can know the difference between the books someone wrote and the books
 someone merely translated, which for an author archive is roughly the
@@ -141,4 +137,4 @@ Penguin Audio, 2022, 11u 36m</code></pre>
 
 None of which the visitor sees as a *feature*, of course. They see a credits
 line that happens to be right. That's the whole aesthetic of this migration,
-and [the last section](/boeggn/afterlife/) is about making it stay that way.
+and [the last section](/boeggn/afterlife/) is about how I though I was going to make it stay that way (foreshadowing!).

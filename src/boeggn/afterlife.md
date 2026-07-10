@@ -8,14 +8,7 @@ status: draft
 
 # The afterlife
 
-Here is the thing I took longest to admit about the old site: it was not
-flaky because WordPress is bad, or because Dreamhost was slow, though it was
-and it was. It was flaky because *I never wanted to touch it*. Every small
-improvement meant reopening a theme held together with gaffer tape, so no
-small improvements ever happened, so the tape aged, so touching it got
-scarier, so I stopped bothering except in dribs and drabs when the OCD reared its head. 
-
-The real test of the rebuild is what the site is like to *keep*.
+The real test of the rebuild is what the site is like to *keep*. 
 
 ## Adding a book
 
@@ -62,6 +55,8 @@ a naming convention for flat files. The ghost of WordPress!
 <img src="/boeggn/images/fig12d.jpg" style="margin-top: 0.9rem" alt="The Boeggn 'Aan het lezen' shelf: Reaper's Gale first at 52%, alongside The Odyssey, Ice, The Yiddish Policemen's Union and Victorian Psycho." loading="lazy">
 <figcaption><span class="fig-n">Figure 12</span> Adding a book, as it actually looks: <em>(a)</em> the one-line request and the first sanity checks; <em>(b)</em> the entry it writes, linted and built; <em>(c)</em> the report — cover caveat included, nothing committed without my say-so; <em>(d)</em> a few minutes later, <em>Reaper's Gale</em> on the aan-het-lezen shelf, gauge at 52%.</figcaption>
 </figure>
+
+*Note that I have [changed my mind](/boeggn-app) since I wrote this. The mechanism of adding a book is still in place, but the interface is now its own (mobile) application.*
 
 ## The performance rabbit hole, for dessert
 

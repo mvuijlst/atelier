@@ -12,8 +12,8 @@ status: draft
 
 ## Oh no!
 
-One Tuesday this July, a few minutes before a two-hour meeting, I wanted to
-look something up on my booklog — [boeken.tsuk.org](https://boeken.tsuk.org), a site I have been keeping, on and off,
+A few minutes before a two-hour meeting I wanted to
+look something up on my booklog, [boeken.tsuk.org](https://boeken.tsuk.org), a site I have been keeping (on and off)
 since 2002. What I got instead was a cheerful Dreamhost placeholder page —
 *boeken.tsuk.org is almost here!* — and, underneath, helpfully: *Upload your
 website to get started.*
@@ -61,9 +61,9 @@ The "on and off" was often more *off* than *on*. Plot the entries per year and y
 less a publishing schedule than a polygraph readout of two and a half
 decades: one book in 2002, silence, a trickle in 2009, then 138 in 2011 and an
 almost implausible **248 in 2012**, tapering through the twenty-teens to
-exactly **one book in 2023**, then back up to 86 in 2024. I could annotate
-every peak and trough with what was going on in my life at the time, and that
-is precisely why I won't. Rest assured my OCD did not allow me to *not* keep [a list of books read](https://moosedept.org/gelezen/), but my innate laziness also mostly told me to not bother with the reviews. 
+exactly **one book in 2023**, then back up to 86 in 2024. 
+
+(Rest assured that my OCD did not allow me to *not* keep [a list of books read](https://moosedept.org/gelezen/).)
 
 <figure class="fig fig-diagram">
 <img class="svg-adapt" src="/boeggn/images/fig4-years.svg" alt="Bar chart of booklog entries per year, 2002 to 2026: single entries in 2002 and 2004, 21 in 2009, a towering 138 and 248 in 2011 and 2012, a long taper to 3 in 2018, nothing at all in 2019 and 2020, 58 in 2021, exactly one book in 2023, back up to 86 in 2024.">
@@ -73,17 +73,14 @@ is precisely why I won't. Rest assured my OCD did not allow me to *not* keep [a 
 Technically, the site was a custom WordPress theme I built myself, with lots
 of gaffer tape and chewing gum keeping the parts somewhat connected, running
 on a shared Dreamhost server that had felt, for years on end, like a mosquito
-swimming in honey. Why was it still there? Because Dreamhost was cheap,
+swimming in honey (hence the drop-offs when WordPress became unmanageably slow and the spurts when it mysteriously became a little faster again). The site was still there because Dreamhost was cheap,
 because moving it was hassle, and because I certainly didn't feel like
 digging into that theme again and making it work in some more elegant way
-than it did. Inertia is a perfectly serviceable hosting strategy, right up
-until the day it isn't.
+than it did. Inertia is a perfectly serviceable hosting strategy, and in my experience most problems tend to go away when you ignore them long enough, ahem.
 
-This piece is about that day, and it is a lighter story than [the one about
+This is a quick write-up about the work I/we did today. A lighter story than [the one about
 my father's thesis](/raimbaut/): nothing here needed a vision model or an
-editorial conscience, just a spine, a database dump, an initial meeting to multitask through. In order: [the two-hour rescue and the
-strangler-fig rebuild](/boeggn/rescue/); [what the database confessed once I
-actually read it](/boeggn/archaeology/); [the evening redesign I had been
+editorial conscience, just a spine, a database dump, and some free time during a meeting. In order: [strangler-fig rebuild ftw](/boeggn/rescue/); [stuff I found in the database](/boeggn/archaeology/); [the redesign I had been
 putting off for years](/boeggn/redesign/); [the author data, which turned
 out to be the actual rabbit hole](/boeggn/authors/); and [what the site is
-like to live with now](/boeggn/afterlife/).
+like to live with now](/boeggn/afterlife/) (but actually not — [see the update](/boeggn-app)).

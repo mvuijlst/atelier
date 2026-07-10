@@ -11,9 +11,9 @@ status: draft
 *Rome wasn't built in a day. This app was.*
 
 <div class="author-note">
-<p>I left my booklog's source data in Markdown files, thinking I'd use Claude or (later) my OpenClaw assistant to edit the contents. It didn't take me more than two books to realise this was actually a horrible editing experience. 😕</p>
-<p>So I just gave the reigns to the AI, gave it <a id="brief-link" href="#brief-modal">this brief</a>, and let it do its thing practically on its own. I thought it'd turn out something funnily weird and wrong — it didn't. I didn't count on it having access to its memory and the things we'd been building together. Ah well.</p>
-<p>My petty revenge was to have it create this write up, that I will not be editing at all.</p>
+<p>I left my <a href="/boeggn">booklog</a>'s source data in Markdown files, thinking I'd use Claude or (later) my OpenClaw assistant to edit the contents. It didn't take me more than two books to realise this was actually a horrible editing experience. 😕</p>
+<p>So I just gave the reigns to the AI, gave it <a id="brief-link" href="#brief-modal">this brief</a>, and let it do its thing practically on its own. I thought it'd turn out something funnily weird and wrong — it didn't. I didn't count on it having access to its memory of the things we'd been building together. Ah well.</p>
+<p>My petty revenge was to have AI create this write up and have it behave like a proper AI should.</p>
 </div>
 
 ## 👋 Introduction
@@ -150,7 +150,7 @@ beautiful.
 </ul>
 </li>
 </ul>
-<p>Think about this and produce a plan. I do NOT want to make the current boeken.tsuk.org site a dynamic website; this is a separate application that consumes data from the site and uses the site's existing pipeline to publish.</p>
+<p>Think about this, produce a plan, and execute it. I do NOT want to make the current boeken.tsuk.org site a dynamic website; this is a separate application that consumes data from the site and uses the site's existing pipeline to publish. Put it in m:\dev\boeggn, deploy to boeggn-yusupov on my vps.</p>
 </div>
 </dialog>
 

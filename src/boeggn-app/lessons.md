@@ -119,3 +119,28 @@ That's not a compromise. That's not a trade-off. That's the whole point. ✨
 <img src="/boeggn-app/images/fig12.jpg" alt="A photorealistic velvet-and-brass Victorian reading room at night: a tufted purple sofa with an open book, a steampunk pipe organ, marble busts with glowing diadems, botanical prints, and by the sofa a brass-mounted smartphone whose neon screen reads 'Booklog: 97% complete'; through the arched window, a neon wireframe crescent moon." loading="lazy">
 <figcaption><span class="fig-n">Figure 12</span> Journey's end: a quiet room, a good book, and a booklog that is finally — almost — complete.</figcaption>
 </figure>
+
+
+<div class="author-note">
+<h2>What it actually looks like</h2>
+<p>All AI slop kidding aside, I'm pretty happy with the little app. The book cover lookups don't quite work like I think they should, and I really need to test some of the edge cases (adding books that are already in there under the same name, under a slightly different name, how does it deal with re-reads, some additional polish) — but overall Claude did a great job with really <em>minimal</em> additional prompting:</p>
+</div>
+
+<figure class="fig">
+<div class="fig-row">
+<img src="/boeggn-app/images/Screenshot_20260710_020805_Chrome.jpg" alt="The boeggn app home on a phone: 'Toevoegen', 'Lezende' and 'Bewerken' cards above an 'Aan het lezen' shelf listing Reaper's Gale at 52%, The Odyssey, Ice, The Yiddish Policemen's Union and Victorian Psycho, each with cover and progress bar." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_020826_Chrome.jpg" alt="The update-reading screen for Victorian Psycho: cover, a 'Voortgang' field showing 36, gelezen/te gaan/% mode pills with % selected, and a 'Bijwerken & publiceren' button, numeric keyboard open." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_020911_Chrome.jpg" alt="The 'Bewerken' search screen: the query 'Foot' returns Slewfoot: A Tale of Bewitchery by Brom and Footnotes in Gaza by Joe Sacco; a small red '1' pending-publish badge sits in the header." loading="lazy">
+</div>
+<div class="fig-row">
+<img src="/boeggn-app/images/Screenshot_20260710_020919_Chrome.jpg" alt="The Slewfoot edit form: cover and the '/slewfoot/' slug, 'begin te lezen' and 'uitgelezen — quoteer & bespreek' buttons, and fields for Titel, a Datum picker (08/07/2026), Plank set to 'te lezen' and a Score slider with 'geen score' ticked." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_020937_Chrome.jpg" alt="The taxonomy part of the same edit form: category toggle buttons with 'horror' selected, a 'nieuwe categorieën' field gated behind a confirmation checkbox, a Tags field, and an Auteurs field reading 'brom'." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_021336_Chrome.jpg" alt="The 'Toevoegen — te lezen' screen: a free-text box containing two lines, '100 years of Solitude' and 'Licanius trilogy', above an 'Analyseer' button." loading="lazy">
+</div>
+<div class="fig-row">
+<img src="/boeggn-app/images/Screenshot_20260710_021421_Chrome.jpg" alt="An AI proposal card for 'The Shadow of What Was Lost': the author matched to islington-james, the series 'The Licanius Trilogy' flagged as new, and editable Uitgever (Orbit), Jaar (2014) and Reeks # (1) fields — the trilogy expanded to its first volume." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_021737_Chrome.jpg" alt="Back on the app home with edits queued: a red '5' badge and a 'Publiceer 5' button in the header, above the currently-reading shelf, Victorian Psycho now showing 36%." loading="lazy">
+<img src="/boeggn-app/images/Screenshot_20260710_022302_Chrome.jpg" alt="The published result on the live boeken.tsuk.org 'Te lezen' shelf in the browser: the three James Islington Licanius covers dated 10 jul 2026, alongside One Hundred Years of Solitude, Chasing Graves, Snakewood and more." loading="lazy">
+</div>
+<figcaption><span class="fig-n">Figure 13</span> What it actually looks like — one pass through the app, in order: browsing the currently-reading shelf <em>(a)</em>; nudging <em>Victorian Psycho</em>'s progress <em>(b)</em>; searching <em>(c)</em>, then editing a book <em>(d)</em> and its taxonomy <em>(e)</em>; adding books from a couple of lines of free text <em>(f)</em> and reviewing the AI's proposal, the Licanius trilogy expanded to its volumes <em>(g)</em>; five edits queued to publish <em>(h)</em>; and, minutes later, the result on the live site <em>(i)</em>.</figcaption>
+</figure>
