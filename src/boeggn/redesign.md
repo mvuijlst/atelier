@@ -18,7 +18,15 @@ decade, because the old theme was no longer load-bearing. It went in the bin
 that same evening: the actual WordPress theme was gone since the morning, but I also dropped every single trace of html and css I had around the content. I was *not* about to refactor it. The new front end is greenfield,
 written from scratch against clean Markdown content, it took most of the
 evening and a decent slice of the night, and it contained (at least *in utero*) more or less every
-small idea I had been quietly filing away for years under *someday*.
+small idea I had been quietly filing away for years under *someday*. Some of those ideas had made it as far as a notebook: shelf views for read, reading and to read; a cover-led book page; search; and a rather hopeful statistics screen.
+
+
+<figure class="fig">
+<img src="/boeggn/images/redesign-notebook.jpg"
+     alt="An open dotted notebook with blue-ink wireframes for the booklog: a cover-led book page, navigation between read, reading and to-read shelves, grids of book covers, search and edit controls, and a statistics dashboard with charts."
+     loading="lazy">
+<figcaption><span class="fig-n">Figure 8</span> The <em>someday</em> file: shelves, book pages, search and statistics, waiting for the old theme to stop being load-bearing.</figcaption>
+</figure>
 
 ## Shelves, not a blog
 
