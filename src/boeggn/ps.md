@@ -93,3 +93,16 @@ about the time.
 
 (Reading continued throughout, I should note. *[Victorian Psycho](https://boeken.tsuk.org/2026/07/victorian-psycho/)* advanced
 sixty-five pages while all this was going on. Priorities intact.)
+
+## And on, and on, and on
+
+When the cost of rework is just the cost of explaining to an AI exactly what you want, rework never stops. After finishing *Victorian Psycho* I had Claude do the following:
+
+1. Make Hugo generate cover webp thumbnails for the boosk in lists (turns out it used full-size images).
+2. In "te lezen", show only the covers.
+3. Make the current "Gelezen" page the home page and change the title to "Recent gelezen"; make the "gelezen" link in the main navigation go to an archive page. Navigating decades of books read with just previous/next and search was not the best experience. 
+4. Changed my mind about Home/End navigation: breaking in-page navigation to have it navigate the list was just confusing. A small affordance concession, too: style the right arrow / left arrow on the lists and detail pages as a small keyboard navigation button. 
+5. Make the treemap half the height, add hover labels. On desktop, instead of showing 4 small graphs, show 2 on a line. Drop the "zes reeksen" -- that doesn't really work. 
+6. Add a title attribute tooltip to covers in the lists; make the date a shade lighter for the sake of WCAG AA-ness.
+
+I'm not quite sure hwo I'll tackel the archives. We'll see. 
