@@ -2,7 +2,6 @@
 title: "A few days later"
 heading: "A few days later"
 navLabel: "PS"
-nn: ""
 section: 7
 status: draft
 ---
@@ -50,6 +49,35 @@ linked, not matched by title, because I own two different books called
 the readings ("Herlezen op …"); series pages collapse the reads of one book
 into a single tile that lists every date (and has fun overlapping covers, and yes, I know those aren't ideal on mobile). That also means the series pages
 got their promised attention, so both loose ends are tied off.
+
+## The small stuff
+
+A pile of little interface things too, none of which merits its own
+heading, all of which would have stayed on the someday-list forever on the
+old site. The lists got real page numbers — first and last page always
+visible, an ellipsis bridging the middle — and the keyboard pages along
+with them: ← and → for newer and older, Home and End for the ends. The
+← / → arrows on a book page itself now follow the direction of the list
+you're browsing: the gelezen shelf runs newest-first, so → means "older";
+the te-lezen shelf runs oldest-first, so → means "the one I added after
+it". (Arrows that always meant newer/older regardless of which way the
+list was pointing turned out to be exactly as disorienting as that
+sounds.) And the reading-progress veil — the cover that uncovers itself as
+I get further into a book — used to live only on the aan-het-lezen shelf;
+it now also shows on series pages and on the book's own page, and a book I
+haven't started sits under a full veil. Small stuff, like I said. But it's
+the small stuff that makes a site feel like someone lives there.
+
+## The app
+
+There is also, now, an app. Adding books by talking to an agent in a code
+editor is a perfectly fine desk experience and a terrible couch one, and
+books get finished on the couch. So content management moved into a small
+mobile app that simply does what I would do by hand — edit the Markdown,
+run the checks, commit, push, let the build pipeline do the rest — while
+the site itself stays exactly as static as it was. That one got
+[its own write-up](/boeggn-app/), in a register I will not be apologising
+for.
 
 ## And a stats page
 

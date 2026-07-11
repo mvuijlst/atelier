@@ -78,7 +78,7 @@ maintenance looks like when you're not afraid of the codebase: a mild
 annoyance, some thinking, a prompt to your friendly neighbourhood AI, a thirty-fold speedup, a one-paragraph note in
 the decision log.
 
-And the decision log has *company*. Prev/next arrows on a book page used to
+Prev/next arrows on a book page used to
 walk straight off the edge of one shelf onto the next — from the oldest
 *read* book to a *to-read* one, which is navigationally like stepping off
 an escalator into a stockroom — so now they stay within the shelf. None of
